@@ -2,7 +2,7 @@
 Personal home server configuration and automation
 
 ### Dynamic DNS
-DynDNS is used here due to obvious reasons. I'm using NoIP because ISP's router supports it. Actually, I would prefer to use Dynu since it doesn't require an email confirmation every 30 days, but this router doesn't support it and I don't want a DUC service in my homelab installed. 
+DynDNS is used here due to obvious reasons. I'm using NoIP because ISP's router supports it, but I would prefer to use Dynu since it doesn't require an email confirmation every 30 days, but this router doesn't support it and I don't want a DUC service in my homelab installed. 
 **Note to self**: Change once I change routers, if the router supports Dynu.
 
 ## TODO:
