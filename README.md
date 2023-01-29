@@ -38,6 +38,9 @@ DynDNS is used here due to obvious reasons. I'm using NoIP because ISP's router 
 ## Backups
 TODO this whole section
 
+## Guides
+https://github.com/zilexa/Homeserver
+
 ## TODO:
 - See Google Keep, once finished continue with this
 - Make a list of apps/services/programs installed
