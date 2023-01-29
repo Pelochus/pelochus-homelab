@@ -7,6 +7,7 @@ This is the hardware used:
 - Heatsinks + Fan + Case
 - 5V4A USB-C PSU
 - WD external HDD 4TB
+- Network via Gigabit Ethernet
 
 Possible alternatives/upgrades listed here [hardware/README.md](https://github.com/Pelochus/pelochus-homelab/edit/main/hardware/README.md) 
 
