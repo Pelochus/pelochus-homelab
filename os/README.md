@@ -1,4 +1,4 @@
-# OS
+# Operating System
 This README focuses on the OS and its configuration
 
 ## OS
