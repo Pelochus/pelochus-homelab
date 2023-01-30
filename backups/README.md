@@ -1,6 +1,9 @@
 # Backups
 This section includes what backups are needed, which are recommended and how to backup them if it isn't possible via scripts/terminal
 
+## Full OS backup
+Researching
+
 ## Important data
 TODO:
 - Make script
