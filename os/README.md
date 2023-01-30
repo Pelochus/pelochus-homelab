@@ -18,7 +18,7 @@ Ordered chronologically. SSH is enabled by default on Armbian
 - SWAP enabled
 - Added automatic updates (day 1 of each month) and automatic reboots (day 2 of each month)* _See TODO below_
 - Open Minecraft and VPN ports (25565/both & 51820/UDP)
-- Enable HW acceleration (Optional, See [this](https://www.armbian.com/orangepi-5/))
+- Enable 3D HW acceleration (Optional, See [this](https://www.armbian.com/orangepi-5/))
 
 Only VPN port is open because WireGuard has a really low network overhead, so it is easier and more secure to just open the VPN port to connect to every other service (SSH, Pi-Hole, OMV...). Minecraft is an exception here, shouldn't give VPN profiles to every friend/family member that wants to connect to the server
 
