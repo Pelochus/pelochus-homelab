@@ -40,4 +40,4 @@ TODO this whole section
 - Automate configs
 - Docker for ease of setup?
 - Think of backups automation (Rsync?) 
-- Maintenance section? (script doing defrag, cleaning, autoupdates...)
+- Maintenance subsection in OS script? (script doing defrag, cleaning, autoupdates...)
