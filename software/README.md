@@ -11,7 +11,7 @@ This README focuses on the software used throughout the whole server, including 
 
 
 ## qBittorrent
-
+See this [guide](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer))
 
 ## OpenMediaVault
 
