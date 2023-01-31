@@ -33,6 +33,8 @@ TODO this whole section
 
 [Armbian Fine Tuning](https://docs.armbian.com/User-Guide_Fine-Tuning/)
 
+[qBittorrent with webUI + daemon](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer))
+
 ## TODO:
 - See Google Keep, once finished continue with this
 - Learn automation tools different from bash scripts (Ansible?)
