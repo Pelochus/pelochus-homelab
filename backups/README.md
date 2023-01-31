@@ -15,6 +15,9 @@ Some installed services have the ability to backup their data. These are listed 
 ### Pi-Hole
 Built-in software backup in Pi-Hole's webUI. Do manually, is pretty easy
 
+### PiVPN
+There is a command for it, search it up. Probably can be done automatically. TODO FINISH THIS PIVPN SECTION
+
 ### More software
 
 
