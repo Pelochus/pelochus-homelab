@@ -35,8 +35,8 @@ options() {
         # Auto update every Monday at 3AM
         # Reboots after update, if successful
         3 | 1)
-            upd-and-reboot="0 3 * * 1 /usr/bin/apt update && /usr/bin/apt upgrade -y && /sbin/shutdown -r now"
-            ( crontab -u root -l; echo "$cronjob" ) | crontab -u root
+            updandreboot="0 3 * * 1 /usr/bin/apt update && /usr/bin/apt upgrade -y && /sbin/shutdown -r now"
+            ( crontab -u root -l; echo "$updandreboot" ) | crontab -u root
         ;;&
 
         # Enables 3D HW acceleration for Orange Pi 5
