@@ -29,14 +29,14 @@ options() {
         # Enable 8 GB SWAP
         # Also sets swappiness to a low value so that swap is not used often
         2 | 1)
-            
-        ;;& 
+           # See Armbian Fine Tuning docs, does not seem easy, might be better to do manually 
+        ;;&
 
-        # Adds automatic system updates and reboots to cron
-        # Auto update every TODO
-        # Reboots every TODO
+        # Auto update every Monday at 3AM
+        # Reboots after update, if successful
         3 | 1)
-
+            upd-and-reboot="0 3 * * 1 /usr/bin/apt update && /usr/bin/apt upgrade -y && /sbin/shutdown -r now"
+            ( crontab -u root -l; echo "$cronjob" ) | crontab -u root
         ;;&
 
         # Enables 3D HW acceleration for Orange Pi 5
