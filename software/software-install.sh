@@ -34,27 +34,29 @@ options() {
         # Install Pi-Hole, needs user interaction, must be done before PiVPN
         # Configuration is manual, restore a backup or do manually in webUI
         2 | 1)
-            
+            curl -sSL https://install.pi-hole.net | bash
         ;;& 
 
         # Install PiVPN, also needs user interaction
         3 | 1)
-            
+            curl -L https://install.pivpn.io | bash
         ;;&
 
         # Install Netdata, needs compiling, may take a while
         4 | 1)
-            
+            wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && \
+            sh /tmp/netdata-kickstart.sh --stable-channel --disable-telemetry
         ;;&
 
         # Install qBittorrent-nox, which is a CLI edition with webUI
         5 | 1)
-            
+            sudo apt install qbittorrent-nox
+            # TODO: Config daemon? Maybe not possible, due to necessary first run with required user's input 
         ;;&
 
         # Install OpenMediaVault [NOTE: Port 80 may conflict with PiHole, change OMV port]
         6 | 1)
-            
+            # TODO, try to do once manually this doesn't seem to be easily scripted, at least with the truly bad explained official documentation
         ;;&
 
         # TODO Install Jellyfin [maybe add Radarr, Sonarr and Prowlarr to this section]
