@@ -35,6 +35,9 @@ TODO this whole section
 
 [qBittorrent with webUI + daemon](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer))
 
+[OpenMediaVault Installation](https://docs.openmediavault.org/en/latest/installation/on_debian.html)
+*Requires Debian or Debian-based distro, must not use Ubuntu*
+
 ## TODO:
 - See Google Keep, once finished continue with this
 - Learn automation tools different from bash scripts (Ansible?)

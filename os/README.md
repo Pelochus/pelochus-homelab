@@ -3,7 +3,7 @@ This README focuses on the OS and its configuration
 
 ## OS
 I'm using Armbian latest version with the following "subversions" (if it can be called that):
-- **Jammy:** Based on Ubuntu (Jammy) rather than Debian (Bullseye). Many people said there is better package and repositories support
+- **Bullseye:** Based on Debian (Jammy) rather than Ubuntu (Jammy). Many people said there is better support and more packages in Jammy, but OpenMediaVault only works in Debian based distros (Ubuntu doesn't, for some reason)
 - **Stable:** Better than rolling release due to obvious reasons
 - **CLI image:** No plans on adding a screen, neither the current HW used has many spare power
 
@@ -25,7 +25,7 @@ Only VPN port is open because WireGuard has a really low network overhead, so it
 ## Alternatives
 - **DietPi:** Even more lightweight than Armbian, also has many utilities pre-installed for ease of setup
 - **Ubuntu Server:** Slightly heavy, recommended if using a proper x86 server with more RAM and CPU. Has a lot support due to being one of the most used server distros
-- **Debian:** Pretty much Ubuntu but more lightweight, less preinstalled software
+- **Debian:** Pretty much Ubuntu but more lightweight, less preinstalled software. OpenMediaVault officially supported
 - **Manjaro:** Best Arch alternative
 
 ## TODO:
