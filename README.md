@@ -35,6 +35,8 @@ TODO this whole section
 
 [qBittorrent with webUI + daemon](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer))
 
+[Minecraft Server in Docker with Bedrock support](https://jamesachambers.com/minecraft-java-bedrock-server-together-geyser-floodgate/)
+
 [OpenMediaVault Installation](https://docs.openmediavault.org/en/latest/installation/on_debian.html)
 *Requires Debian or Debian-based distro, shouldn't use Ubuntu*
 
