@@ -3,7 +3,7 @@ This README focuses on the OS and its configuration
 
 ## OS
 I'm using Armbian latest version with the following "subversions" (if it can be called that):
-- **Bullseye:** Based on Debian (Jammy) rather than Ubuntu (Jammy). Many people said there is better support and more packages in Jammy, but OpenMediaVault only works in Debian based distros (Ubuntu doesn't, for some reason)
+- **Jammy:** Based on Ubuntu rather than Debian (Bullseye). HW accelerated playback is easier in Jammy. Many people say there is better support and more packages in Jammy, but OpenMediaVault only works in Debian based distros (Ubuntu doesn't, for some reason) and this is why I'm just running a simple SFTP + Samba for the NAS part of the server
 - **Stable:** Better than rolling release due to obvious reasons
 - **CLI image:** No plans on adding a screen, neither the current HW used has many spare power
 
