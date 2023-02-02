@@ -63,12 +63,12 @@ options() {
 
             # Create shared folder for Samba
             mkdir /root/shared
-            echo "[$sambaname]"; \
+            (echo "[$sambaname]"; \
             echo "path = /root/shared"; \
             echo "writeable=Yes"; \
             echo "create mask=0777"; \
             echo "directory mask=0777" \
-            echo "public=no" \
+            echo "public=no") \
             >> /etc/samba/smb.conf
 
             # Add user + password
