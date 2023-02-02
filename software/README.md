@@ -13,7 +13,7 @@ This README focuses on the software used throughout the whole server, including 
 ## qBittorrent
 See this [guide](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer))
 
-## OpenMediaVault
+## Samba + SFTP
 
 
 ## Dynamic DNS
@@ -21,7 +21,7 @@ DynDNS is used here due to obvious reasons. I'm using NoIP because ISP's router 
 **Note to self**: Change once I change routers, if the router supports Dynu.
 
 ## Possible alternatives
-- FileRun / Nextcloud as an alternative to OMV
+- OMV / NextCloud as an upgraded alternative to Samba + SFTP
 - Grafana / Prometheus as alternatives to Netdata (way more configurable, less friendly and probably heavier on CPU/RAM/Disk)
 - Deluge / Transmission as alternatives to qBittorrent
 
