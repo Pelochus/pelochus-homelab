@@ -2,7 +2,7 @@
 This README focuses on the software used throughout the whole server, including installation, configuration and possible alternatives to keep an eye on.
 
 ## Pi-Hole
-Installs Pi-Hole the official way with user interaction required. Needs full configuration or restoring a backup after installation
+Installs Pi-Hole the official way with user interaction required. Needs full configuration or restoring a backup after installation.
 **Uses port 80 for webUI and administration**
 
 ## PiVPN
