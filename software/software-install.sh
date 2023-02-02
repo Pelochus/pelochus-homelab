@@ -19,7 +19,7 @@ menu() {
     echo "  [3] Install PiVPN (needs user interaction)"
     echo "  [4] Install Netdata (needs compiling, may take a while)"
     echo "  [5] Install qBittorrent"
-    echo "  [6] Install OpenMediaVault"
+    echo "  [6] Install Samba"
     echo "  [7] Install Jellyfin"
     echo "  [8] Install Minecraft Server"
     echo "  [9] Install Organizr"
@@ -54,9 +54,9 @@ options() {
             # TODO: Config daemon? Maybe not possible, due to necessary first run with required user's input 
         ;;&
 
-        # Install OpenMediaVault [NOTE: Port 80 may conflict with PiHole, change OMV port]
+        # Install Samba 
         6 | 1)
-            # TODO, try to do once manually this doesn't seem to be easily scripted, at least with the truly bad explained official documentation
+            sudo apt install samba samba-common-bin
         ;;&
 
         # TODO Install Jellyfin [maybe add Radarr, Sonarr and Prowlarr to this section]
