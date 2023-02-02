@@ -19,7 +19,7 @@ menu() {
     echo "  [3] Install PiVPN (needs user interaction)"
     echo "  [4] Install Netdata (needs compiling, may take a while)"
     echo "  [5] Install qBittorrent"
-    echo "  [6] Install Samba"
+    echo "  [6] Install Samba (semi-automatic, requires creating user)"
     echo "  [7] Install Jellyfin"
     echo "  [8] Install Minecraft Server"
     echo "  [9] Install Organizr"
@@ -50,13 +50,35 @@ options() {
 
         # Install qBittorrent-nox, which is a CLI edition with webUI
         5 | 1)
-            sudo apt install qbittorrent-nox
+            sudo apt install qbittorrent-nox -y
             # TODO: Config daemon? Maybe not possible, due to necessary first run with required user's input 
         ;;&
 
         # Install Samba 
         6 | 1)
-            sudo apt install samba samba-common-bin
+            sudo apt install samba samba-common-bin -y
+
+            echo "Insert Samba Network name: "
+            read sambaname
+
+            # Create shared folder for Samba
+            mkdir /root/shared
+            echo "[$sambaname]"; \
+            echo "path = /root/shared"; \
+            echo "writeable=Yes"; \
+            echo "create mask=0777"; \
+            echo "directory mask=0777" \
+            echo "public=no" \
+            >> /etc/samba/smb.conf
+
+            # Add user + password
+            echo "Insert username for Samba login (user needs to exist in Linux): "
+            read userlogin
+            sudo smbpasswd -a $userlogin
+
+            # Restart service and report back to user
+            sudo systemctl restart smbd
+            echo "||| Basic Samba installation done |||"
         ;;&
 
         # TODO Install Jellyfin [maybe add Radarr, Sonarr and Prowlarr to this section]
