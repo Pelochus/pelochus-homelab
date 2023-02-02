@@ -22,7 +22,7 @@ menu() {
     echo "  [6] Install Samba (semi-automatic, requires creating user)"
     echo "  [7] Install Jellyfin"
     echo "  [8] Install Minecraft Server"
-    echo "  [9] Install Organizr"
+    echo "  [9] Install Organizr (needs user interaction)"
     echo "  [0] Exit"
     echo 
     echo "-------------------------------------------------------------------------------------------------"
@@ -54,14 +54,15 @@ options() {
             # TODO: Config daemon? Maybe not possible, due to necessary first run with required user's input 
         ;;&
 
-        # Install Samba 
+        # Install Samba
+        # Needs minimal user interaction
         6 | 1)
             sudo apt install samba samba-common-bin -y
 
             echo "Insert Samba Network name: "
             read sambaname
 
-            # Create shared folder for Samba
+            # Create and config shared folder for Samba
             mkdir /root/shared
             (echo "[$sambaname]"; \
             echo "path = /root/shared"; \
@@ -86,14 +87,19 @@ options() {
             
         ;;&
 
-        # TODO Install Minecraft server [Either PaperMC/Purpur or that one guide with Docker on jamesachamber] 
+        # Installs Minecraft Server with Docker. Includes OpenJDK 18, PaperMC and Floodgate for Bedrock users
+        # For extra info:
+        # https://jamesachambers.com/minecraft-java-bedrock-server-together-geyser-floodgate/ 
         8 | 1)
-            
+            sudo apt install docker -y 
+            docker volume create dockerminecraft
         ;;&
 
         # TODO Install Organizr [NOTE: May also conflict with PiHole port 80, better change PiHole in this case]
+        # NOTE Also needs user interaction, 
         9 | 1)
-            
+            sudo git clone https://github.com/elmerfdz/OrganizrInstaller /opt/OrganizrInstaller
+            sudo bash /opt/OrganizrInstaller/ubuntu/oui/ou_installer.sh
         ;;
 
         # Exit
