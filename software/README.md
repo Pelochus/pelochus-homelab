@@ -25,7 +25,7 @@ Compatible codecs listed [here](https://en.wikipedia.org/wiki/Comparison_of_vide
 **TODO** Maybe add Jellyfin configuration / recommended settings here?. Do once installed, configured and tested various options to see performance.
 
 Has clients in these [platforms](https://jellyfin.org/downloads/clients/). **Uses the following ports:**
-- 8096/tcp is used by default for HTTP traffic
+- 8096/tcp is used by default for HTTP traffic (In other words, default webUI port)
 - 8920/tcp is used by default for HTTPS traffic
 
 ## Minecraft
@@ -42,6 +42,18 @@ I'm using this command to run:
     docker run -it -v dockerminecraft:/minecraft -p 25565:25565 -p 19132:19132/udp -p 19132:19132 -e Version=1.19.3 MaxMemory=2048 TZ=Europe/Paris --restart unless-stopped 05jchambers/legendary-minecraft-geyser-floodgate:latest
 ```
 **Uses port 25565 for Java and 19132 for Bedrock**
+
+## Organizr
+Web interface for organizing services. Quite stylish, simple and provides a pretty organized look for the services running in the server, at least those with some kind of web interface or access without SSH / other protocols such as SMB or VPN. Like Pi-Hole, **uses port 80**
+
+### TODO
+Since ports conflict, see if by any chance this theory works:
+pi.hole/admin redirects to PiHole webUI
+pi.hole       redirects to Organizr
+
+If that doesn't work, you have these two alternatives:
+- Change PiHole port (I want Organizr as the main/start page)
+- Use PiHole or Organizr in a Docker image or something that lets me give it an extra IP (everything has the same local IP except that Docker Image)
 
 ## Dynamic DNS
 DynDNS is used here due to obvious reasons. I'm using NoIP because ISP's router supports it, but I would prefer to use Dynu since it doesn't require an email confirmation every 30 days, but this router doesn't support it and I don't want a DUC service in my homelab installed. 
