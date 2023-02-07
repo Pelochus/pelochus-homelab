@@ -42,8 +42,8 @@ options() {
         4)
             echo
             echo "-----------"
-	        echo "Exiting now"
-	        echo "-----------"
+	    echo "Exiting now"
+	    echo "-----------"
             echo
             exit
         ;;
@@ -97,7 +97,7 @@ read continue
 if [ $continue == 'Y' ] || [ $continue == 'y' ]
 then
     clear
-	while true
+    while true
     do
         menu 
         read chosen 
@@ -105,8 +105,8 @@ then
     done
 else
     echo
-	echo "-----------"
-	echo "Exiting now"
-	echo "-----------"
+    echo "-----------"
+    echo "Exiting now"
+    echo "-----------"
     echo
 fi
