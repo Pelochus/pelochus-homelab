@@ -17,6 +17,17 @@ Installed qbittorrent-nox, edition without GUI but with webUI. See this [guide](
 ## Samba + SFTP
 Very simple NAS-like setup. SFTP is automatically working since using OpenSSH (**uses SSH port, 22**). Samba is completely installed and configured in script, but needs minimal user interaction (folder name, username and password)
 
+## Jellyfin
+Alternative to Plex, but completely FOSS. Installation commands are from the following [guide](https://jellyfin.org/docs/general/installation/linux/#ubuntu-repository)
+
+Compatible codecs listed [here](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats). Essentially, use Chrome, Edge or native OS client.
+
+**TODO** Maybe add Jellyfin configuration / recommended settings here?. Do once installed, configured and tested various options to see performance.
+
+Has clients in these [platforms](https://jellyfin.org/downloads/clients/). **Uses the following ports:**
+- 8096/tcp is used by default for HTTP traffic
+- 8920/tcp is used by default for HTTPS traffic
+
 ## Minecraft
 The Minecraft setup in this script is using this [guide](https://jamesachambers.com/minecraft-java-bedrock-server-together-geyser-floodgate/). See this guide for extra details in configuration and running
 The main features are the following:
