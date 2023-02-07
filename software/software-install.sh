@@ -86,9 +86,9 @@ options() {
         7 | 1)  
             # Prerrequisites, add repo
             sudo apt install curl gnupg
-	    sudo add-apt-repository universe
-	    sudo mkdir -p /etc/apt/keyrings
-	    curl -fsSL https://repo.jellyfin.org/jellyfin_team.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/jellyfin.gpg
+            sudo add-apt-repository universe
+            sudo mkdir -p /etc/apt/keyrings
+            curl -fsSL https://repo.jellyfin.org/jellyfin_team.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/jellyfin.gpg
             cat <<EOF | sudo tee /etc/apt/sources.list.d/jellyfin.sources \
             Types: deb \ 
             URIs: https://repo.jellyfin.org/$( awk -F'=' '/^ID=/{ print $NF }' /etc/os-release ) \
@@ -124,8 +124,8 @@ options() {
         0)
             echo
             echo "-----------"
-	    echo "Exiting now"
-	    echo "-----------"
+            echo "Exiting now"
+            echo "-----------"
             echo
             exit
         ;;

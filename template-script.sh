@@ -42,8 +42,8 @@ options() {
         4)
             echo
             echo "-----------"
-	    echo "Exiting now"
-	    echo "-----------"
+            echo "Exiting now"
+            echo "-----------"
             echo
             exit
         ;;
