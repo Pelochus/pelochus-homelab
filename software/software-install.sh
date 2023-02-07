@@ -89,14 +89,24 @@ options() {
             sudo add-apt-repository universe
             sudo mkdir -p /etc/apt/keyrings
             curl -fsSL https://repo.jellyfin.org/jellyfin_team.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/jellyfin.gpg
-            cat <<EOF | sudo tee /etc/apt/sources.list.d/jellyfin.sources \
-            Types: deb \ 
-            URIs: https://repo.jellyfin.org/$( awk -F'=' '/^ID=/{ print $NF }' /etc/os-release ) \
-            Suites: $( awk -F'=' '/^VERSION_CODENAME=/{ print $NF }' /etc/os-release ) \
-            Components: main \
-            Architectures: $( dpkg --print-architecture ) \
-            Signed-By: /etc/apt/keyrings/jellyfin.gpg \
-            EOF
+            
+            # Official way for next step:
+            # cat <<EOF | sudo tee /etc/apt/sources.list.d/jellyfin.sources
+            # Types: deb
+            # URIs: https://repo.jellyfin.org/$( awk -F'=' '/^ID=/{ print $NF }' /etc/os-release )
+            # Suites: $( awk -F'=' '/^VERSION_CODENAME=/{ print $NF }' /etc/os-release )
+            # Components: main
+            # Architectures: $( dpkg --print-architecture )
+            # Signed-By: /etc/apt/keyrings/jellyfin.gpg
+            # EOF
+
+            # My working alternative for that previous step
+            echo "Types: deb
+            URIs: https://repo.jellyfin.org/$( awk -F'=' '/^ID=/{ print $NF }' /etc/os-release )
+            Suites: $( awk -F'=' '/^VERSION_CODENAME=/{ print $NF }' /etc/os-release )
+            Components: main
+            Architectures: $( dpkg --print-architecture )
+            Signed-By: /etc/apt/keyrings/jellyfin.gpg" >> /etc/apt/sources.list.d/jellyfin.sources
             
             # Install and start
             sudo apt update
