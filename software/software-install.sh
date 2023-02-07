@@ -82,9 +82,27 @@ options() {
             echo "||| Basic Samba installation done |||"
         ;;&
 
-        # TODO Install Jellyfin [maybe add Radarr, Sonarr and Prowlarr to this section]
-        7 | 1)
+        # Install Jellyfin TODO [maybe add Radarr, Sonarr and Prowlarr to this section]
+        7 | 1)  
+            # Prerrequisites, add repo
+            sudo apt install curl gnupg
+	        sudo add-apt-repository universe
+	        sudo mkdir -p /etc/apt/keyrings
+	        curl -fsSL https://repo.jellyfin.org/jellyfin_team.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/jellyfin.gpg
+            cat <<EOF | sudo tee /etc/apt/sources.list.d/jellyfin.sources \
+            Types: deb \ 
+            URIs: https://repo.jellyfin.org/$( awk -F'=' '/^ID=/{ print $NF }' /etc/os-release ) \
+            Suites: $( awk -F'=' '/^VERSION_CODENAME=/{ print $NF }' /etc/os-release ) \
+            Components: main \
+            Architectures: $( dpkg --print-architecture ) \
+            Signed-By: /etc/apt/keyrings/jellyfin.gpg \
+            EOF
             
+            # Install and start
+            sudo apt update
+            sudo apt install jellyfin -y
+            sudo systemctl enable jellyfin
+            sudo systemctl restart jellyfin
         ;;&
 
         # Installs Minecraft Server with Docker. Includes OpenJDK 18, PaperMC and Floodgate for Bedrock users
@@ -106,8 +124,8 @@ options() {
         0)
             echo
             echo "-----------"
-	    echo "Exiting now"
-	    echo "-----------"
+	        echo "Exiting now"
+	        echo "-----------"
             echo
             exit
         ;;
