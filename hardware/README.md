@@ -14,7 +14,7 @@ Orange Pi 5 with the following specs:
 
 ## Future upgrades
 - Add more disk space
-- RAID configuration (Better done on a true server, not an Orange Pi...)
+- RAID configuration (Better do on a true server, not an Orange Pi...)
 - Change filesystem to ZFS or something more suitable for a server
 
 ## TODO:
