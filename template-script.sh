@@ -65,7 +65,7 @@ then
         echo
         echo "pelochus-homelab Template Script Help"
         echo
-        echo "-a / --auto: Runs all options that doesn't require user's help. Needs root privileges"
+        echo "-a / --auto: Runs all options that don't require user's help. Needs root privileges"
         echo "-h / --help: Shows this help screen"
         echo 
         echo "For more information visit https://github.com/Pelochus/pelochus-homelab"
