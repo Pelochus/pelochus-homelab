@@ -16,7 +16,7 @@ menu() {
     echo 
     echo "  [1] Safe run (options 2, 3 and 4)"
     echo "  [2] Update system"
-    echo "  [3] Clean APT cache"
+    echo "  [3] Clean APT cache && remove unnecessary dependencies"
     echo "  [4] Reboot"
     echo "  [5] Exit"
     echo 
