@@ -16,7 +16,7 @@ Ordered chronologically. SSH is enabled by default on Armbian
 - Installed on external HDD
 - SSH enabled
 - SWAP enabled (especifically, [ZSWAP](https://docs.armbian.com/User-Guide_Fine-Tuning/#swap-for-experts) on Armbian)
-- Added automatic updates (day 1 of each month) and automatic reboots (day 2 of each month)* _See TODO below_
+- Run basic options from maintenance script automatically, every Monday at 3AM
 - Open VPN Wireguard port (51820/UDP)
 - Open Minecraft and VPN ports (25565/both & 51820/UDP)
 - Enable 3D HW acceleration (Optional, See [this](https://www.armbian.com/orangepi-5/))
