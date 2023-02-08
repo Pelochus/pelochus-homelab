@@ -45,5 +45,4 @@ TODO this whole section
 ## TODO:
 - Learn automation tools different from bash scripts (Ansible?)
 - Docker for ease of setup?
-- Think of backups automation (Rsync?) 
-- Maintenance subsection in OS script? (script doing defrag, cleaning, autoupdates...)
+- Think of backups automation (Rsync?)
