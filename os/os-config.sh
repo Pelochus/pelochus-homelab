@@ -32,11 +32,17 @@ options() {
            # See Armbian Fine Tuning docs, does not seem easy, might be better to do manually 
         ;;&
 
-        # Auto update every Monday at 3AM
-        # Reboots after update, if successful
+        # Runs maintenance script with --auto option. Update, clean and reboot
+        # Every Monday at 3AM
         3 | 1)
-            updandreboot="0 3 * * 1 /usr/bin/apt update && /usr/bin/apt upgrade -y && /sbin/shutdown -r now"
-            ( crontab -u root -l; echo "$updandreboot" ) | crontab -u root
+            # OLD
+            # Auto update every Monday at 3AM
+            # Reboots after update, if successful
+            # updandreboot="0 3 * * 1 /usr/bin/apt update && /usr/bin/apt full-upgrade -y && /sbin/shutdown -r now"
+            # ( crontab -u root -l; echo "$updandreboot" ) | crontab -u root
+
+            maintenance="0 3 * * 1 /bin/bash /root/pelochus-homelab/os/os-maintenance.sh --auto"
+            ( crontab -u root -l; echo "$maintenance" ) | crontab -u root
         ;;&
 
         # Enables 3D HW acceleration for Orange Pi 5
@@ -77,7 +83,7 @@ then
         echo
         echo "pelochus-homelab OS Config Script Help"
         echo
-        echo "-a / --auto: Runs all options that doesn't require user's help. Needs root privileges"
+        echo "-a / --auto: Runs all options that don't require user's help. Needs root privileges"
         echo "-h / --help: Shows this help screen"
         echo 
         echo "For more information visit https://github.com/Pelochus/pelochus-homelab/os"
