@@ -16,7 +16,7 @@ Ordered chronologically. SSH is enabled by default on Armbian
 - Installed on external HDD
 - SSH enabled
 - SWAP enabled (especifically, [ZSWAP](https://docs.armbian.com/User-Guide_Fine-Tuning/#swap-for-experts) on Armbian)
-- Run basic options from maintenance script automatically, every Monday at 3AM
+- Run basic options from maintenance script automatically, every Monday at 5AM
 - Open VPN Wireguard port (51820/UDP)
 - Open Minecraft and VPN ports (25565/both & 51820/UDP)
 - Enable 3D HW acceleration (Optional, See [this](https://www.armbian.com/orangepi-5/))
@@ -26,6 +26,7 @@ Only VPN port is open because WireGuard has a really low network overhead, so it
 ## Maintenance
 Since any SBC is simple enough to not need any hardware maintenance (apart from replacing broken parts), I added this section here in OS, which is the only section that needs frequent maintenance. There is a specific [script](https://github.com/Pelochus/pelochus-homelab/os/os-maintenance.sh) for maintenance which does the following:
 - **Update && clean:** Runs apt looking to update software and calls apt autoclean afterwards
+- **Pi-Hole Update:** Runs pihole -up in order to update Pi-Hole adlists
 - **Remove APT cache && unnecessary dependencies:** Runs apt clean, which removes all cache for apt and autoremove for unnecessary dependencies
 - **Reboot:** This option is there only for chaining with the previous options when doing an automatic maintenance
 - **TODO:** Defrag? (could be dangerous without batteries), Full cache clean? Remove logs older than 1 month?
