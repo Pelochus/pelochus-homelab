@@ -33,15 +33,16 @@ options() {
         ;;&
 
         # Runs maintenance script with --auto option. Update, clean and reboot
-        # Every Monday at 3AM
+        # Every Monday at 5AM
+        # 5AM because routers reboots randomly between 2 to 5AM (cant change it)
         3 | 1)
             # OLD
-            # Auto update every Monday at 3AM
+            # Auto update every Monday at 5AM
             # Reboots after update, if successful
             # updandreboot="0 3 * * 1 /usr/bin/apt update && /usr/bin/apt full-upgrade -y && /sbin/shutdown -r now"
             # ( crontab -u root -l; echo "$updandreboot" ) | crontab -u root
 
-            maintenance="0 3 * * 1 /bin/bash /root/pelochus-homelab/os/os-maintenance.sh --auto"
+            maintenance="0 5 * * 1 /bin/bash /root/pelochus-homelab/os/os-maintenance.sh --auto"
             ( crontab -u root -l; echo "$maintenance" ) | crontab -u root
         ;;&
 
