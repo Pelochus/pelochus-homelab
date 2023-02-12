@@ -54,6 +54,7 @@ options() {
             sudo add-apt-repository ppa:liujianfeng1994/rockchip-multimedia
             sudo apt update
             sudo apt dist-upgrade
+            sudo apt install mali-g610-firmare rockchip-multimedia-config
         ;;
 
         # Exit
