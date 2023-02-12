@@ -14,11 +14,12 @@ menu() {
     echo 
     echo "  ### MENU - Choose an option"
     echo 
-    echo "  [1] Safe run (options 2, 3 and 4)"
+    echo "  [1] Safe run (options 2 to 5)"
     echo "  [2] Update system"
-    echo "  [3] Clean APT cache && remove unnecessary dependencies"
-    echo "  [4] Reboot"
-    echo "  [5] Exit"
+    echo "  [3] Update Pi-Hole"
+    echo "  [4] Clean APT cache && remove unnecessary dependencies"
+    echo "  [5] Reboot"
+    echo "  [0] Exit"
     echo 
     echo "-------------------------------------------------------------------------------------------------"
 }
@@ -31,19 +32,24 @@ options() {
         2 | 1)
            apt update && apt full-ugprade -y && apt autoclean
         ;;&
+        
+        # Updates PiHole (mainly adlists, could update anything extra PiHole considers)
+        3 | 1)
+           pihole -up
+        ;;&
 
         # Clean ALL apt cache and unnecessary dependencies
-        3 | 1)
+        4 | 1)
             sudo apt clean && sudo apt autoremove
         ;;&
 
         # Reboot
-        4 | 1)
+        5 | 1)
             sudo reboot
         ;;
 
         # Exit
-        5)
+        0)
             echo
             echo "-----------"
             echo "Exiting now"
