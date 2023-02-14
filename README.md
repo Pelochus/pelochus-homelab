@@ -37,6 +37,8 @@ TODO this whole section
 
 [Jellyfin Ubuntu Installation](https://jellyfin.org/docs/general/installation/linux/#ubuntu-repository)
 
+[WikiArr for *arr Installations](https://wiki.servarr.com/)
+
 [Minecraft Server in Docker with Bedrock support](https://jamesachambers.com/minecraft-java-bedrock-server-together-geyser-floodgate/)
 
 [OpenMediaVault Installation](https://docs.openmediavault.org/en/latest/installation/on_debian.html)
