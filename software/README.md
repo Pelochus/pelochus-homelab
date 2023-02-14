@@ -3,16 +3,16 @@ This README focuses on the software used throughout the whole server, including 
 
 ## Pi-Hole
 Installs Pi-Hole the official way with user interaction required. Needs full configuration or restoring a backup after installation.
-**Uses port 80 for webUI and administration**
+**Uses port 80 for webUI and administration but I changed it to port 88, to avoid conflict with Organizr**
 
 ## PiVPN
 Exactly the same as Pi-Hole, very similar installation and way of backing up/restoring backups. Uses either OpenVPN or Wireguard port, depending on what user selected as VPN protocol **(1194/UDP 443/TCP for OpenVPN, 51820 for WireGuard)**
 
 ## Netdata
-Very lightweight way of monitoring the server, has connection to cloud for easily and securely connecting remotely to Netdata. Needs compiling, but no user interaction, so it will take some time. **Uses port 19999**
+Very lightweight way of monitoring the server, has connection to cloud for easily and securely connecting remotely to Netdata. May need compiling depending on architecture used. **Uses port 19999**
 
 ## qBittorrent
-Installed qbittorrent-nox, edition without GUI but with webUI. See this [guide](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer)) for extra information in runnning and configuring the daemon. **Uses port 8080**
+Installed qbittorrent-nox, edition without GUI but with webUI. See this [guide](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer)) for extra information in runnning and configuring the daemon. May need minor configuration on webUI and changing a setting for use within Organizr iframes. **Uses port 8080**
 
 ## Samba + SFTP
 Very simple NAS-like setup. SFTP is automatically working since using OpenSSH (**uses SSH port, 22**). Samba is completely installed and configured in script, but needs minimal user interaction (folder name, username and password)
@@ -39,21 +39,24 @@ The main features are the following:
 I'm using this command to run:
 
 ```shell
-    docker run -it -v dockerminecraft:/minecraft -p 25565:25565 -p 19132:19132/udp -p 19132:19132 -e Version=1.19.3 -e MaxMemory=2048 -e TZ=Europe/Paris --restart unless-stopped 05jchambers/legendary-minecraft-geyser-floodgate:latest
+docker run -it -v dockerminecraft:/minecraft -p 25565:25565 -p 19132:19132/udp -p 19132:19132 -e Version=1.19.3 -e MaxMemory=2048 -e TZ=Europe/Paris --restart unless-stopped 05jchambers/legendary-minecraft-geyser-floodgate:latest
 ```
+
+    PaperMC configuration:
+    dockerminecraft/_data/server.properties
+    
+    Geyser configuration:
+    dockerminecraft/_data/plugins/Geyser-Spigot/config.yml
+    
+    Locate Docker volume:
+    docker volume inspect dockerminecraft
+    
+It is quite useful to move the volume to an ext.ernal storage if it is faster than the OS storage. Then create a symbolic link with ```ls -s``` where it was located previously
+
 **Uses port 25565 for Java and 19132 for Bedrock**
 
 ## Organizr
-Web interface for organizing services. Quite stylish, simple and provides a pretty organized look for the services running in the server, at least those with some kind of web interface or access without SSH / other protocols such as SMB or VPN. Like Pi-Hole, **uses port 80**
-
-### TODO
-Since ports conflict, see if by any chance this theory works:
-pi.hole/admin redirects to PiHole webUI
-pi.hole       redirects to Organizr
-
-If that doesn't work, you have these two alternatives:
-- Change PiHole port (I want Organizr as the main/start page)
-- Use PiHole or Organizr in a Docker image or something that lets me give it an extra IP (everything has the same local IP except that Docker Image)
+Web interface for organizing services. Quite stylish, simple and provides a pretty organized look for the services running in the server, at least those with some kind of web interface or access without SSH / other protocols such as SMB or VPN. Needs extra config through webUI. I don't recommend using SSL certs unless forwarding the port. Like Pi-Hole, **uses port 80**
 
 ## Dynamic DNS
 DynDNS is used here due to obvious reasons. I'm using NoIP because ISP's router supports it, but I would prefer to use Dynu since it doesn't require an email confirmation every 30 days, but this router doesn't support it and I don't want a DUC service in my homelab installed. 
@@ -65,5 +68,4 @@ DynDNS is used here due to obvious reasons. I'm using NoIP because ISP's router 
 - Deluge / Transmission as alternatives to qBittorrent
 
 ## TODO:
-- Install more software, mainly media software and Organizr
-- Finish this readme accordingly to what software has been added
+- Finish this README accordingly to what software has been added
