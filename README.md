@@ -21,7 +21,9 @@ Here's a list of the main services/programs used. It is **approximately ordered 
 - Netdata
 - qBittorrent with webUI enabled
 - Samba + SFTP (Simple NAS setup)
-- Probably will add more, but I won't add them here in this README until I actually install them properly
+- Jellyfin + Radarr + Sonarr
+- Minecraft Server with Geyser
+- Organizr
 
 See [software/README.md](https://github.com/Pelochus/pelochus-homelab/edit/main/software/) for extra details of each software and their configs.
 
