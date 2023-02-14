@@ -51,7 +51,11 @@ options() {
         # Install qBittorrent-nox, which is a CLI edition with webUI
         5 | 1)
             sudo apt install qbittorrent-nox -y
-            # TODO: Config daemon? Maybe not possible, due to necessary first run with required user's input 
+            sudo adduser qbtuser
+            sudo usermod -s /usr/sbin/nologin qbtuser
+            sudo su qbtuser
+            qbittorrent-nox
+            # TODO: Keep following guide, search how to do automatically the rest
         ;;&
 
         # Install Samba
