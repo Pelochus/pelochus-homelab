@@ -52,7 +52,8 @@ options() {
         5 | 1)
             sudo apt install qbittorrent-nox -y
             sudo adduser qbtuser
-            sudo usermod -s /usr/sbin/nologin qbtuser
+            # Uncomment if not using SSH
+            # sudo usermod -s /usr/sbin/nologin qbtuser 
             sudo su qbtuser
             qbittorrent-nox
             # TODO: Keep following guide, search how to do automatically the rest
