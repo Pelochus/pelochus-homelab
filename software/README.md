@@ -42,6 +42,8 @@ I'm using this command to run:
 docker run -it -v dockerminecraft:/minecraft -p 25565:25565 -p 19132:19132/udp -p 19132:19132 -e Version=1.19.3 -e MaxMemory=2048 -e TZ=Europe/Paris --restart unless-stopped 05jchambers/legendary-minecraft-geyser-floodgate:latest
 ```
 
+Some useful files and directories are:
+
     PaperMC configuration:
     dockerminecraft/_data/server.properties
     
