@@ -28,10 +28,10 @@ Has clients in these [platforms](https://jellyfin.org/downloads/clients/). **Use
 - 8096/tcp is used by default for HTTP traffic (In other words, default webUI port)
 - 8920/tcp is used by default for HTTPS traffic
 
-#### ArrInstall: Install Radarr, Sonarr and other *Arr programs
+### ArrInstall: Install Radarr, Sonarr and other *Arr programs
 This script install easily *Arr programs. It is updated manually, so everytime running it, you should be checking if there's a newer version. See the official link in [WikiArr](https://wiki.servarr.com/install-script)
 
-Radarr *uses port 7878* for webUI
+Radarr **uses port 7878** for webUI
 
 ## Minecraft
 The Minecraft setup in this script is using this [guide](https://jamesachambers.com/minecraft-java-bedrock-server-together-geyser-floodgate/). See this guide for extra details in configuration and running
