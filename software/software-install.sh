@@ -66,20 +66,26 @@ options() {
 
             echo "Insert Samba Network name: "
             read sambaname
+            
+            echo "Insert path to be shared: "
+            echo "Examples: /home/user/share /media/hdd/samba /mnt/usb/nas"
+            read sharepath
+            
+            echo "Insert username for Samba login (user needs to exist in Linux): "
+            read userlogin
 
             # Create and config shared folder for Samba
             mkdir /root/shared
             (echo "[$sambaname]"; \
-            echo "path = /root/shared"; \
-            echo "writeable=Yes"; \
-            echo "create mask=0777"; \
-            echo "directory mask=0777" \
-            echo "public=no") \
+            echo "path = $sharepath"; \
+            echo "readonly = yes"; \
+            echo "create mask = 0755"; \
+            echo "directory mask = 0755"; \
+            echo "public = no"; \
+            echo "write list = $userlogin") \
             >> /etc/samba/smb.conf
 
-            # Add user + password
-            echo "Insert username for Samba login (user needs to exist in Linux): "
-            read userlogin
+            # Add user and password
             sudo smbpasswd -a $userlogin
 
             # Restart service and report back to user
@@ -87,7 +93,7 @@ options() {
             echo "||| Basic Samba installation done |||"
         ;;&
 
-        # Install Jellyfin TODO [maybe add Radarr, Sonarr and Prowlarr to this section]
+        # Install Jellyfin TODO maybe add Radarr, Sonarr and Prowlarr to this section
         7 | 1)  
             # Prerrequisites, add repo
             sudo apt install curl gnupg
