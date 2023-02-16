@@ -31,8 +31,8 @@ Has clients in these [platforms](https://jellyfin.org/downloads/clients/). **Use
 ### ArrInstall: Install Radarr, Sonarr and other *Arr programs
 This script install easily *Arr programs. It is updated manually, so everytime running it, you should be checking if there's a newer version. See the official link in [WikiArr](https://wiki.servarr.com/install-script)
 
-Radarr **uses port 7878** for webUI
-Prowlarr **uses port 9696** for webUI
+- Radarr **uses port 7878** for webUI
+- Prowlarr **uses port 9696** for webUI
 
 ## Minecraft
 The Minecraft setup in this script is using this [guide](https://jamesachambers.com/minecraft-java-bedrock-server-together-geyser-floodgate/). See this guide for extra details in configuration and running
