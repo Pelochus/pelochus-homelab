@@ -79,8 +79,8 @@ options() {
             (echo "[$sambaname]"; \
             echo "path = $sharepath"; \
             echo "readonly = yes"; \
-            echo "create mask = 0755"; \
-            echo "directory mask = 0755"; \
+            echo "create mask = 0775"; \
+            echo "directory mask = 0775"; \
             echo "public = no"; \
             echo "write list = $userlogin") \
             >> /etc/samba/smb.conf
