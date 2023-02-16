@@ -13,6 +13,7 @@ TODO:
 Some installed services have the ability to backup their data. These are listed here:
 
 | Software    | Backup Type |
+| ----------- | ----------- |
 | Pi-Hole     | Can backup through web interface |
 | PiVPN       | Command line backup, ```pivpn -bk``` |
 | Netdata     | Cloud based backup, linked to account |
