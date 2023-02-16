@@ -66,6 +66,20 @@ It is quite useful to move the volume to an ext.ernal storage if it is faster th
 ## Organizr
 Web interface for organizing services. Quite stylish, simple and provides a pretty organized look for the services running in the server, at least those with some kind of web interface or access without SSH / other protocols such as SMB or VPN. Needs extra config through webUI. I don't recommend using SSL certs unless forwarding the port. Like Pi-Hole, **uses port 80**
 
+## Port List
+| Software      | Port  |
+| ------------- | :---: |
+| Pi-Hole       | 88    |
+| PiVPN         | 51820 |
+| Netdata       | 19999 |
+| qBittorrent   | 8080  |
+| Jellyfin      | 8096  |
+| Radarr        | 7878  |
+| Prowlarr      | 9696  |
+| MC Java       | 25565 |
+| MC Bedrock    | 25565 |
+| Organizr      | 80    |
+
 ## Dynamic DNS
 DynDNS is used here due to obvious reasons. I'm using NoIP because ISP's router supports it, but I would prefer to use Dynu since it doesn't require an email confirmation every 30 days, but this router doesn't support it and I don't want a DUC service in my homelab installed. 
 **Note to self**: Change once I change routers, if the router supports Dynu.
