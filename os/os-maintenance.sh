@@ -30,7 +30,7 @@ options() {
         # Update and autoclean
         # See README.md for information why full-upgrade instead of upgrade
         2 | 1)
-           apt update && apt full-ugprade -y && apt autoclean
+           apt update && apt full-upgrade -y && apt autoclean
         ;;&
         
         # Updates PiHole (mainly adlists, could update anything extra PiHole considers)
