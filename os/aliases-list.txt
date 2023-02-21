@@ -1,4 +1,4 @@
-# Fast clean
+# Fast clear
 alias c='clear'
 
 # Colored ip output
