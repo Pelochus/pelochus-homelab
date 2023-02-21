@@ -30,6 +30,7 @@ To add my aliases list to ```.bashrc``` just insert this command:
 cat aliases-list.txt >> /home/user/.bashrc
 cat aliases-list.txt >> /root/.bashrc
 ```
+This assumes ```aliases-list.txt``` is in the root of the current path. Substitute ```user``` with the corresponding username used. It is a personal list, so it may be useless for anyone else
 
 ## Maintenance
 Since any SBC is simple enough to not need any hardware maintenance (apart from replacing broken parts), I added this section here in OS, which is the only section that needs frequent maintenance. There is a specific [script](https://github.com/Pelochus/pelochus-homelab/os/os-maintenance.sh) for maintenance which does the following:
