@@ -26,7 +26,7 @@ Only VPN port is open because WireGuard has a really low network overhead, so it
 
 ### Adding aliases to .bashrc
 To add my aliases list to ```.bashrc``` just insert this command:
-shell```
+```shell
 cat aliases-list.txt >> /home/user/.bashrc
 cat aliases-list.txt >> /root/.bashrc
 ```
