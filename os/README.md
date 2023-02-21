@@ -24,6 +24,13 @@ Ordered chronologically. SSH is enabled by default on Armbian
 
 Only VPN port is open because WireGuard has a really low network overhead, so it is easier and more secure to just open the VPN port to connect to every other service (SSH, Pi-Hole, NAS...). Minecraft is an exception here, shouldn't give VPN profiles to every friend/family member that wants to connect to the server
 
+### Adding aliases to .bashrc
+To add my aliases list to ```.bashrc``` just insert this command:
+shell```
+cat aliases-list.txt >> /home/user/.bashrc
+cat aliases-list.txt >> /root/.bashrc
+```
+
 ## Maintenance
 Since any SBC is simple enough to not need any hardware maintenance (apart from replacing broken parts), I added this section here in OS, which is the only section that needs frequent maintenance. There is a specific [script](https://github.com/Pelochus/pelochus-homelab/os/os-maintenance.sh) for maintenance which does the following:
 - **Update && clean:** Runs apt looking to update software and calls apt autoclean afterwards
