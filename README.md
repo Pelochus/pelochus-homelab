@@ -21,7 +21,7 @@ Here's a list of the main services/programs used. It is **approximately ordered 
 - Netdata
 - qBittorrent with webUI enabled
 - Samba + SFTP (Simple NAS setup)
-- Jellyfin + Radarr + Sonarr
+- Jellyfin + *Arr Software
 - Minecraft Server with Geyser
 - Organizr
 
@@ -39,7 +39,7 @@ TODO this whole section
 
 [Jellyfin Ubuntu Installation](https://jellyfin.org/docs/general/installation/linux/#ubuntu-repository)
 
-[WikiArr for *arr Installations](https://wiki.servarr.com/)
+[WikiArr for *Arr Installations](https://wiki.servarr.com/)
 
 [Minecraft Server in Docker with Bedrock support](https://jamesachambers.com/minecraft-java-bedrock-server-together-geyser-floodgate/)
 
@@ -47,6 +47,6 @@ TODO this whole section
 *Requires Debian or Debian-based distro, shouldn't use Ubuntu*
 
 ## TODO:
-- Learn automation tools different from bash scripts (Ansible?)
-- Docker for ease of setup?
-- Think of backups automation (Rsync?)
+- Learn automation tools different from bash scripts (Ansible)
+- Learn Docker, helps at isolating programs, assigning different IPs per container, restoring to an initial point if something breaks badly...  
+- Think of backups automation (Rsync + Bash or Ansible)
