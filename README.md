@@ -47,6 +47,7 @@ TODO this whole section
 *Requires Debian or Debian-based distro, shouldn't use Ubuntu*
 
 ## TODO:
+- Add Jellyseer to the software list
 - Learn automation tools different from bash scripts (Ansible)
 - Learn Docker, helps at isolating programs, assigning different IPs per container, restoring to an initial point if something breaks badly...  
 - Think of backups automation (Rsync + Bash or Ansible)
