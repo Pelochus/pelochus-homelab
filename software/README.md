@@ -77,7 +77,7 @@ Web interface for organizing services. Quite stylish, simple and provides a pret
 | Radarr        | 7878  |
 | Prowlarr      | 9696  |
 | MC Java       | 25565 |
-| MC Bedrock    | 25565 |
+| MC Bedrock    | 19132 |
 | Organizr      | 80    |
 
 ## Dynamic DNS
