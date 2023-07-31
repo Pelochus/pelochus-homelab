@@ -51,7 +51,8 @@ TODO this whole section
 - Learn Docker, helps at isolating programs, assigning different IPs per container, restoring to an initial point if something breaks badly...
 - Use Docker containers more often, especially when:
     - Install does not need initial config (like Pi-Hole, PiVPN)
-    - Other install methods are difficult
+    - Other install methods are difficult or Docker is the recommended one
     - Do not mind performance overhead
-    - Best examples can be: Homarr, Arr software, Jellyfin, Jellyseer...
+    - Easy startup on boot with ```--restart unless-stopped``` flag
+    - Best examples here are: Homarr, Jellyfin, Jellyseer, MC server...
 - Think of backups automation (Rsync + Bash or Ansible)
