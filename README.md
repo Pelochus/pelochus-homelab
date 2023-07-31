@@ -49,6 +49,7 @@ TODO this whole section
 ## TODO:
 - Learn automation tools different from bash scripts (Ansible)
 - Learn Docker, helps at isolating programs, assigning different IPs per container, restoring to an initial point if something breaks badly...
+- Investigate Watchtower for easy updating of Docker installed containers via Docker Compose
 - Use Docker containers more often, especially when:
     - Install does not need initial config (like Pi-Hole, PiVPN)
     - Other install methods are difficult or Docker is the recommended one
