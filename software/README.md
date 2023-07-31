@@ -3,7 +3,7 @@ This README focuses on the software used throughout the whole server, including 
 
 ## Pi-Hole
 Installs Pi-Hole the official way with user interaction required. Needs full configuration or restoring a backup after installation.
-**Uses port 80 for webUI and administration but I changed it to port 88, to avoid conflict with Organizr**
+**Uses port 80 for webUI and administration but change it to port 88 if it conflicts**
 
 ## PiVPN
 Exactly the same as Pi-Hole, very similar installation and way of backing up/restoring backups. Uses either OpenVPN or Wireguard port, depending on what user selected as VPN protocol **(1194/UDP 443/TCP for OpenVPN, 51820 for WireGuard)**
@@ -34,6 +34,9 @@ This script install easily *Arr programs. **IMPORTANT It is updated manually, so
 - Radarr **uses port 7878** for webUI
 - Prowlarr **uses port 9696** for webUI
 
+## Jellyseerr
+Overseer fork for Jellyfin. Allows easy request of movies and shows through a cleaner, simpler web interface than Radarr / Sonarr or plain qBittorrent. Also useful because it combines both Radarr and Sonarr into one webUI. Install after Jellyfin and Arr software. **Uses port 5055**
+
 ## Minecraft
 The Minecraft setup in this script is using this [guide](https://jamesachambers.com/minecraft-java-bedrock-server-together-geyser-floodgate/). See this guide for extra details in configuration and running
 The main features are the following:
@@ -45,7 +48,7 @@ The main features are the following:
 I'm using this command to run:
 
 ```shell
-docker run -it -v dockerminecraft:/minecraft -p 25565:25565 -p 19132:19132/udp -p 19132:19132 -e Version=1.19.3 -e MaxMemory=2048 -e TZ=Europe/Paris --restart unless-stopped 05jchambers/legendary-minecraft-geyser-floodgate:latest
+docker run -it -v dockerminecraft:/minecraft -p 25565:25565 -p 19132:19132/udp -p 19132:19132 -e Version=1.20.1 -e MaxMemory=2048 -e TZ=Europe/Paris --restart unless-stopped 05jchambers/legendary-minecraft-geyser-floodgate:latest
 ```
 
 Some useful files and directories are:
@@ -63,8 +66,8 @@ It is quite useful to move the volume to an ext.ernal storage if it is faster th
 
 **Uses port 25565 for Java and 19132 for Bedrock**
 
-## Organizr
-Web interface for organizing services. Quite stylish, simple and provides a pretty organized look for the services running in the server, at least those with some kind of web interface or access without SSH / other protocols such as SMB or VPN. Needs extra config through webUI. I don't recommend using SSL certs unless forwarding the port. Like Pi-Hole, **uses port 80**
+## Homarr
+Web interface for organizing services. Quite stylish, simple and provides a pretty organized look for the services running in the server, at least those with some kind of web interface or access without SSH / other protocols such as SMB or VPN. Needs extra config through webUI, but is easy and simple. Substitutes Organizr, which is worse, less simple and more difficult to configure and install. **Uses port 7575, though it can be better to use 80**
 
 ## Port List
 | Software      | Port  |
@@ -74,11 +77,12 @@ Web interface for organizing services. Quite stylish, simple and provides a pret
 | Netdata       | 19999 |
 | qBittorrent   | 8080  |
 | Jellyfin      | 8096  |
+| Jellyseerr    | 5055  |
 | Radarr        | 7878  |
 | Prowlarr      | 9696  |
 | MC Java       | 25565 |
 | MC Bedrock    | 19132 |
-| Organizr      | 80    |
+| Homarr        | 7575  |
 
 ## Dynamic DNS
 DynDNS is used here due to obvious reasons. I'm using NoIP because ISP's router supports it, but I would prefer to use Dynu since it doesn't require an email confirmation every 30 days, but this router doesn't support it and I don't want a DUC service in my homelab installed. 
