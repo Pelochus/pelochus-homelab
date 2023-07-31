@@ -17,12 +17,12 @@ menu() {
     echo "  [1] Do everything"
     echo "  [2] Install Pi-Hole (needs user interaction)"
     echo "  [3] Install PiVPN (needs user interaction)"
-    echo "  [4] Install Netdata (needs compiling, may take a while)"
+    echo "  [4] Install Netdata (could need compiling, may take a while)"
     echo "  [5] Install qBittorrent"
     echo "  [6] Install Samba (semi-automatic, requires creating user)"
-    echo "  [7] Install Jellyfin"
+    echo "  [7] Install Jellyfin & Jellyseerr"
     echo "  [8] Install Minecraft Server"
-    echo "  [9] Install Organizr (needs user interaction)"
+    echo "  [9] Install Homarr"
     echo "  [0] Exit"
     echo 
     echo "-------------------------------------------------------------------------------------------------"
@@ -93,7 +93,7 @@ options() {
             echo "||| Basic Samba installation done |||"
         ;;&
 
-        # Install Jellyfin TODO maybe add Radarr, Sonarr and Prowlarr to this section
+        # Install Jellyfin and Jellyseerr TODO maybe add Radarr, Sonarr and Prowlarr to this section through Arr script
         7 | 1)  
             # Prerrequisites, add repo
             sudo apt install curl gnupg
@@ -124,6 +124,26 @@ options() {
             sudo apt install jellyfin -y
             sudo systemctl enable jellyfin
             sudo systemctl restart jellyfin
+
+            ## INSTALLATION OF JELLYSEERR
+            mkdir /opt/jellyseerr/
+            sudo touch /opt/jellyseerr/docker-compose.yml
+            echo "version: '3'
+services:
+    jellyseerr:
+       image: fallenbagel/jellyseerr:latest
+       container_name: jellyseerr
+       environment:
+            - LOG_LEVEL=debug
+            - TZ=Asia/Tashkent
+       ports:
+            - 5055:5055
+       volumes:
+            - /path/to/appdata/config:/app/config
+       restart: unless-stopped" >> /opt/jellyseerr/docker-compose.yml
+            cd /opt/jellyseerr/
+            sudo apt install docker-compose -y
+            docker-compose up -d
         ;;&
 
         # Installs Minecraft Server with Docker. Includes OpenJDK 18, PaperMC and Floodgate for Bedrock users
@@ -134,11 +154,27 @@ options() {
             docker volume create dockerminecraft
         ;;&
 
-        # TODO Install Organizr [NOTE: May also conflict with PiHole port 80, better change PiHole in this case]
-        # NOTE Also needs user interaction, 
+        # Install Homarr
         9 | 1)
-            sudo git clone https://github.com/elmerfdz/OrganizrInstaller /opt/OrganizrInstaller
-            sudo bash /opt/OrganizrInstaller/ubuntu/oui/ou_installer.sh
+            mkdir /opt/homarr/
+            sudo touch /opt/homarr/docker-compose.yml
+            echo "version: '3'
+#---------------------------------------------------------------------#
+#     Homarr - A simple, yet powerful dashboard for your server.     #
+#---------------------------------------------------------------------#
+services:
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - ./homarr/configs:/app/data/configs
+      - ./homarr/icons:/app/public/icons
+    ports:
+      - '7575:7575'" >> /opt/homarr/docker-compose.yml
+            sudo apt install docker-compose -y # Just in case it hasnt been installed before
+            cd /opt/homarr/
+            docker-compose up -d
         ;;
 
         # Exit
