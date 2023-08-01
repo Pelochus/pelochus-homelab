@@ -12,7 +12,7 @@ Exactly the same as Pi-Hole, very similar installation and way of backing up/res
 Very lightweight way of monitoring the server, has connection to cloud for easily and securely connecting remotely to Netdata. May need compiling depending on architecture used. **Uses port 19999**
 
 ## qBittorrent
-Installed qbittorrent-nox, edition without GUI but with webUI. See this [guide](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer)) for extra information in runnning and configuring the daemon. May need minor configuration on webUI and changing a setting for use within Organizr iframes. **Uses port 8080**
+Installed qbittorrent-nox, edition without GUI but with webUI. See this [guide](https://github.com/qbittorrent/qBittorrent/wiki/Running-qBittorrent-without-X-server-(WebUI-only,-systemd-service-set-up,-Ubuntu-15.04-or-newer)) for extra information in runnning and configuring the daemon. **Uses port 8080**
 
 ## Samba + SFTP
 Very simple NAS-like setup. SFTP is automatically working since using OpenSSH (**uses SSH port, 22**). Samba is completely installed and configured in script, but needs minimal user interaction (folder name, username and password)
