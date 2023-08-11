@@ -1,5 +1,5 @@
 # pelochus-homelab
-Personal home server configuration and automation. I use this repo as a reminder of all I did and why I did it in case I want to redo my server from the ground up in the future. This also allows me to skip some steps for future installs since I automated installations/configurations/maintenance. Made it public in case anyone wants to see my personal home server configuration as a point of reference or want to see my skills in Linux administration and scripting. 
+Personal home server configuration and automation. I use this repo as a reminder of all I did and why I did it in case I want to redo my server from the ground up in the future. This also allows me to skip some steps for future installs since I automated installations // configuration // maintenance. Made it public in case anyone wants to see my personal home server configuration as a point of reference or want to see my skills in Linux administration and scripting. 
 
 ## Hardware
 This is the hardware used:
@@ -31,6 +31,8 @@ See [software/README.md](https://github.com/Pelochus/pelochus-homelab/edit/main/
 TODO this whole section
 
 ## Guides
+Guides I used for building this server:
+
 [Full Homeserver Guide](https://github.com/zilexa/Homeserver)
 
 [Armbian Fine Tuning](https://docs.armbian.com/User-Guide_Fine-Tuning/)
