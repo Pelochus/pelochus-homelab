@@ -51,6 +51,8 @@ Guides I used for building this server:
 ## TODO:
 - Learn automation tools different from bash scripts (Ansible)
 - Learn Docker, helps at isolating programs, assigning different IPs per container, restoring to an initial point if something breaks badly...
+  - Once every service has its own container and IP, change the network accordingly (subnetting?)
+  - Assign a local hostname to each service IP (for example, pi.hole, jellyfin.local, radarr.local, netdata.local...)
 - Investigate Watchtower for easy updating of Docker installed containers via Docker Compose
 - Use Docker containers more often, especially when:
     - Install does not need initial config (like Pi-Hole, PiVPN)
