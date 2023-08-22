@@ -170,6 +170,7 @@ services:
     volumes:
       - ./homarr/configs:/app/data/configs
       - ./homarr/icons:/app/public/icons
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - '7575:7575'" >> /opt/homarr/docker-compose.yml
             sudo apt install docker-compose -y # Just in case it hasnt been installed before
