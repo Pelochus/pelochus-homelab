@@ -69,6 +69,8 @@ It is recommended to move the volume to an external storage if it is faster than
 ## Homarr
 Web interface for organizing services. Quite stylish, simple and provides a pretty organized look for the services running in the server, at least those with some kind of web interface or access without SSH / other protocols such as SMB or VPN. Needs extra config through webUI, but is easy and simple. Substitutes Organizr, which is worse, less simple and more difficult to configure and install. **Uses port 7575, though it can be better to use 80**
 
+Homarr can also be used as a simple Docker manager. To do this, just add ```- /var/run/docker.sock:/var/run/docker.sock``` to the ```docker-compose.yml``` volumes section
+
 ## Port List
 | Software      | Port  |
 | ------------- | :---: |
