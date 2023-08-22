@@ -62,7 +62,7 @@ Some useful files and directories are:
     Locate Docker volume:
     docker volume inspect dockerminecraft
     
-It is quite useful to move the volume to an ext.ernal storage if it is faster than the OS storage. Then create a symbolic link with ```ls -s``` where it was located previously
+It is recommended to move the volume to an external storage if it is faster than the OS storage. Then create a symbolic link with ```ls -s``` where it was located previously so that Docker still can access the volume
 
 **Uses port 25565 for Java and 19132 for Bedrock**
 
