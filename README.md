@@ -50,6 +50,7 @@ Guides I used for building this server:
 
 ## TODO:
 - Use nginx as a reverse proxy
+  - Configure SSL with Lets Encrypt, allowing for secure connection to the proxy and all its subsequent subdomains 
   - This also allows to assign a subdomains names like: ```pihole.node1.local```, ```jellyfin.node2.local```...
 - Use this network config when migrating to Docker
   - Use 10.0.0.0/16 private addressing, for simplicity. For example, 10.0.0.0/8 reserved for DHCP devices (smartphones, tablets, IoT...), 10.0.1.0/8 for Docker containers in node 1 (assuming future configuration of cluster)...
