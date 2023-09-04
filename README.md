@@ -1,13 +1,13 @@
 # pelochus-homelab V2
 Personal home server configuration and automation. I use this repo as a reminder of all I did and why I did it in case I want to redo my server from the ground up in the future. This also allows me to skip some steps for future installs since I automated installations, configuration and maintenance. Made it public in case anyone wants to see my personal home server configuration as a point of reference or want to see my skills in Linux administration and scripting. 
 
-In comparison to V1 (see this repo branches), V2 features:
+**In comparison to V1 (see this repo branches), V2 features:**
 - Changed OS from OrangePi OS to Armbian
 - Better network organisation (using 10.0.0.0/16 address space)
 - Use of Docker containers and Docker Compose instead of bare-metal installing
 - Added reverse proxy / using PiHole for organising IPs into local domain names
 - Substituting (partially) Bash for Ansible
-- More backups automation
+- Completed backups section
 
 ## Hardware
 This is the hardware used:
@@ -15,12 +15,12 @@ This is the hardware used:
 - Heatsinks + Fan + Case
 - 5V4A USB-C PSU
 - WD external HDD 4TB
-- Network via Gigabit Ethernet
+- Gigabit Ethernet
 
-Possible alternatives/upgrades listed here [hardware/README.md](https://github.com/Pelochus/pelochus-homelab/edit/main/hardware/)
+Possible alternatives/upgrades listed here, along some network configuration information [hardware/README.md](https://github.com/Pelochus/pelochus-homelab/tree/main/hardware/)
 
 ## OS
-I am using Armbian as the main OS. It is lighter than the official Orange Pi OS, has more support and probably will be updated way more and longer in time. See [os/README.md](https://github.com/Pelochus/pelochus-homelab/edit/main/os/) for details in the configuration used. This includes services pre-installed in Armbian, like SSH and cron. Also includes some basic system & software maintenance.
+I am using Armbian as the main OS. It is lighter than the official Orange Pi OS, has more support and probably will be updated way more and longer in time. See [os/README.md](https://github.com/Pelochus/pelochus-homelab/tree/main/os/) for details in the configuration used. This includes services pre-installed in Armbian, like SSH and cron. Also includes some basic system & software maintenance.
 
 ## Software
 Here's a list of the main services/programs used. It is **approximately ordered by importance / ease of installation and, due to ease of installation, preferred order of installation**:
@@ -31,12 +31,14 @@ Here's a list of the main services/programs used. It is **approximately ordered 
 - Samba + SFTP (Simple NAS setup)
 - Jellyfin + *Arr Software + Jellyseer
 - Minecraft Server with Geyser
-- Homarr (substitutes Organizr)
+- Homarr
 
-See [software/README.md](https://github.com/Pelochus/pelochus-homelab/edit/main/software/) for extra details of each software and their configs.
+See [software/README.md](https://github.com/Pelochus/pelochus-homelab/tree/main/software/) for extra details of each software and their configs.
 
 ## Backups
-TODO this whole section
+Right now, the backup strategy is only limited to software config files. For example, adlists and configuration of Pi-Hole or PiVPN profiles.
+
+See [backups/README.md](https://github.com/Pelochus/pelochus-homelab/tree/main/backups/) for details
 
 ## Guides
 Guides I used for building this server:
@@ -52,9 +54,6 @@ Guides I used for building this server:
 [WikiArr for *Arr Installations](https://wiki.servarr.com/)
 
 [Minecraft Server in Docker with Bedrock support](https://jamesachambers.com/minecraft-java-bedrock-server-together-geyser-floodgate/)
-
-[OpenMediaVault Installation](https://docs.openmediavault.org/en/latest/installation/on_debian.html)
-*Requires Debian or Debian-based distro, shouldn't use Ubuntu*
 
 ## TODO:
 - Use nginx as a reverse proxy
