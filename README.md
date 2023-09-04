@@ -1,3 +1,10 @@
+# V1
+This branch represents the status of my homelab before doing the TODO at the bottom of this README.
+
+V1 features the use of bash, services installed directly on the OS and not too many backups
+
+For V2, I will try to substitute bash for Ansible (at least partially), use Docker/Docker-Compose whenever possible, do some backup automation and better organise the network with changed private addressing from 192.168.0.0/24 to 10.0.0.0/16 + reverse proxy or better DNS config.  
+
 # pelochus-homelab
 Personal home server configuration and automation. I use this repo as a reminder of all I did and why I did it in case I want to redo my server from the ground up in the future. This also allows me to skip some steps for future installs since I automated installations, configuration and maintenance. Made it public in case anyone wants to see my personal home server configuration as a point of reference or want to see my skills in Linux administration and scripting. 
 
