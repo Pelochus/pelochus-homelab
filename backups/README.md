@@ -18,12 +18,12 @@ Some installed services have the ability to backup their data. These are listed 
 | Pi-Hole     | Can backup through web interface |
 | PiVPN       | Command line backup, ```pivpn -bk``` |
 | Netdata     | Cloud based backup, linked to account |
-| qBittorrent | Not needed, seems there aren't options anyway |
+| qBittorrent | Not needed |
+| Jelly*      | Not needed (except for local media) |
 | Minecraft   | Manually copy world data. There are also automatic backups |
 | *Arr        | Option in webUI, similar to Pi-Hole |
 | Homarr      | webUI option, similar to Pi-Hole |
 
 ## TODO:
-- Basically every single script
-- Almost this whole readme
+- Scripts for automating backups
 - Search up if it is possible to automate the majority of the backups listed above, via terminal or copying from an existing directory
