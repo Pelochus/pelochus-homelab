@@ -1,5 +1,13 @@
-# pelochus-homelab
+# pelochus-homelab V2
 Personal home server configuration and automation. I use this repo as a reminder of all I did and why I did it in case I want to redo my server from the ground up in the future. This also allows me to skip some steps for future installs since I automated installations, configuration and maintenance. Made it public in case anyone wants to see my personal home server configuration as a point of reference or want to see my skills in Linux administration and scripting. 
+
+In comparison to V1 (see this repo branches), V2 features:
+- Changed OS from OrangePi OS to Armbian
+- Better network organisation (using 10.0.0.0/16 address space)
+- Use of Docker containers and Docker Compose instead of bare-metal installing
+- Added reverse proxy / using PiHole for organising IPs into local domain names
+- Substituting (partially) Bash for Ansible
+- More backups automation
 
 ## Hardware
 This is the hardware used:
