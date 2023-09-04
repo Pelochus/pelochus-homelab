@@ -55,8 +55,8 @@ options() {
             # Uncomment if not using SSH
             # sudo usermod -s /usr/sbin/nologin qbtuser 
             sudo su qbtuser
-            qbittorrent-nox
-            # TODO: Keep following guide, search how to do automatically the rest
+            # qbittorrent-nox
+            # TODO: Keep following guide
         ;;&
 
         # Install Samba
