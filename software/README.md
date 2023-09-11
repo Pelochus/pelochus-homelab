@@ -94,6 +94,7 @@ DynDNS is used here due to obvious reasons. I'm using NoIP because ISP's router 
 **Note to self**: Change once I change routers, if the router supports Dynu.
 
 ### Possible alternatives
+- **Very interesting**: KSMBD (Samba integrated into Linux 6.6) as alternative to userspace Samba
 - OMV / NextCloud as an upgraded alternative to Samba + SFTP
 - Grafana / Prometheus as alternatives to Netdata (way more configurable, less friendly and probably heavier on CPU/RAM/Disk)
 - Deluge / Transmission as alternatives to qBittorrent
