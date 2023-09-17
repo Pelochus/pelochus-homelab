@@ -1,0 +1,21 @@
+---  
+- name: Update and full-upgrade system 
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400 # One day valid cache
+    upgrade: full
+  notify: Clean cache and remove leftovers
+  register: upd_result
+
+# Print update result
+# - debug: msg="{{ upd_result }}"
+
+- name: Update Pi-Hole
+  command: pihole -up
+  register: pihole_result
+
+# Print update result
+# - debug: msg="{{ pihole_result }}"
+
+# TODO
+# - name: Update Docker containers

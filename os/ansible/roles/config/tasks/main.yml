@@ -1,0 +1,13 @@
+---
+# Think about using templates for this
+- name: Add aliases to .bashrc
+
+# Think about using templates for this
+- name: Set crontab for automating tasks
+  cron:
+
+# This can include drivers, for example
+- name: Install OS-related dependencies
+  apt:
+    name:
+    state: latest

@@ -1,0 +1,12 @@
+---
+- name: Check if BleachBit is installed
+  apt:
+    name: bleachbit 
+    state: latest
+
+- name: Clean with BleachBit
+  command: bleachbit -c --all-but-warning
+  register: out 
+
+# Print cleaning result
+# - debug: msg="{{ out }}"
