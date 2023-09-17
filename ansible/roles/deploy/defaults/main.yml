@@ -1,0 +1,25 @@
+---
+packages:
+  - exa
+  - git
+  - sudo
+  - rsync
+  - docker
+  - docker-compose 
+  - wget
+  - curl
+  - nano
+  - htop
+  - iperf
+  - iperf3
+  - pip
+  - gnupg
+  - rsync
+  - bleachbit
+  - speedtest-cli
+  - samba
+  - samba-common-bin
+  # - neofetch
+
+# docker:
+# Put path here to compose file(s)

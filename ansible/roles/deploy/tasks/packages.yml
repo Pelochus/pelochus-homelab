@@ -1,0 +1,12 @@
+---
+- name: Install important software packages
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600 # Stricter cache time for installs
+    pkg: 
+      "{{ packages }}"
+    state: latest
+    install_recommends: true
+  register: install_results
+
+# - debug: msg="{{ install_results }}"

@@ -1,0 +1,6 @@
+---
+- name: Install packages and deploy Docker containers
+  hosts: localhost
+  
+  roles:
+    - deploy
