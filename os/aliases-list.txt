@@ -1,6 +1,9 @@
 # Fast clear
 alias c='clear'
 
+# Better ls
+alias ls='ls -la'
+
 # Colored ip output
 alias ip='ip -c'
 
