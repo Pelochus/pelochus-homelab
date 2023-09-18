@@ -1,6 +1,7 @@
 ---
 - name: Install packages and deploy Docker containers
   hosts: localhost
+  become: yes
 
   pre_tasks:
     - name: Update and upgrade system

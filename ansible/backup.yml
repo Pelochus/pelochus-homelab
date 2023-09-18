@@ -1,0 +1,7 @@
+---
+- name: Backup OS and important files
+  hosts: localhost
+  become: yes # May not be necessary, check once finished role
+  
+  roles:
+   - backups

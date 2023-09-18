@@ -1,6 +1,7 @@
 ---
 - name: Configure OS parameters
   hosts: localhost
+  become: yes
   
   roles:
    - config

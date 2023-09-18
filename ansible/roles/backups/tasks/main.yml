@@ -1,12 +1,3 @@
 ---
-# TODO this yml entirely
-- name: Backup PiVPN
-  command: pivpn -bk
-
-- name: Check if rsync is installed
-  apt:
-    name: rsync
-    state: latest
-
-- name: Backup important files
-  command: rsync
+- include_tasks: config.yml
+- include_tasks: personal.yml
