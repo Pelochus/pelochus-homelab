@@ -1,6 +1,18 @@
 ---
 - name: Install packages and deploy Docker containers
   hosts: localhost
-  
+
+  pre_tasks:
+    - name: Update and upgrade system
+      include_role:
+        name: maintenance
+        tasks_from: update.yml
+
   roles:
     - deploy
+
+  post_tasks:
+    - name: Clean system
+      include_role:
+        name: maintenance
+        tasks_from: clean.yml

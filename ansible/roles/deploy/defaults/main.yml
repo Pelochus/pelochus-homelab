@@ -21,5 +21,7 @@ packages:
   - samba-common-bin
   # - neofetch
 
+apt_max_cache_age_installs: 3600 # One hour
+
 # docker:
 # Put path here to compose file(s)

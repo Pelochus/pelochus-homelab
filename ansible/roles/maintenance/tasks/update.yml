@@ -2,7 +2,7 @@
 - name: Update and full-upgrade system 
   apt:
     update_cache: yes
-    cache_valid_time: 86400 # One day valid cache
+    cache_valid_time: "{{ apt_max_cache_age_updates }}" # See ../defaults/main.yml
     upgrade: full
   notify: Clean cache and remove leftovers
   register: upd_result

@@ -2,8 +2,8 @@
 - name: Install important software packages
   apt:
     update_cache: yes
-    cache_valid_time: 3600 # Stricter cache time for installs
-    pkg: 
+    cache_valid_time: "{{ apt_max_cache_age_installs }}" # Stricter cache time for installs than updates
+    pkg:
       "{{ packages }}"
     state: latest
     install_recommends: true

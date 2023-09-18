@@ -9,5 +9,6 @@
 # This can include drivers, for example
 - name: Install OS-related dependencies
   apt:
-    name:
+    pkg: 
+      "{{ syspkgs }}"
     state: latest

@@ -6,7 +6,17 @@
 
 - name: Clean with BleachBit
   command: bleachbit -c --all-but-warning
-  register: out 
+  register: out
 
 # Print cleaning result
 # - debug: msg="{{ out }}"
+
+- name: Clean Docker leftovers
+  docker_prune:
+    containers: true
+    containers_filters:
+      until: "{{ docker_prune_filter }}" # Wait for containers to be at least 10 days (see ../defaults/main.yml) without use
+
+    images: true
+    images_filters:
+      until: "{{ docker_prune_filter }}" # Same as containers

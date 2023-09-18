@@ -6,7 +6,7 @@
   roles: 
     - maintenance
 
-  tasks:
+  post_tasks:
     - name: Reboot OS
       reboot:
         pre_reboot_delay: 10 # Wait 10 seconds, just in case

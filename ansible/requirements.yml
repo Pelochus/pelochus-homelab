@@ -1,0 +1,6 @@
+# Recommended to run previous to playbooks
+
+# NOTE: Could be preinstalled
+# Install Docker module for Ansible
+collections:
+  - name: community.docker
