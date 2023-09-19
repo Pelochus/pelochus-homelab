@@ -1,6 +1,6 @@
 ---
 - name: Configure OS parameters
-  hosts: localhost
+  hosts: all
   become: yes
   
   roles:

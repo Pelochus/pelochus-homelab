@@ -1,6 +1,6 @@
 ---
 - name: Install packages and deploy Docker containers
-  hosts: localhost
+  hosts: all
   become: yes
 
   pre_tasks:

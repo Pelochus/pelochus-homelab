@@ -1,6 +1,6 @@
 ---
 - name: Run OS maintenance
-  hosts: localhost
+  hosts: all
   become: yes
 
   roles: 
