@@ -8,5 +8,8 @@
     state: latest
     install_recommends: true
   register: install_results
+  notify: 
+    - Enable Docker
+  # TODO: - Configure Samba
 
 # - debug: msg="{{ install_results }}"

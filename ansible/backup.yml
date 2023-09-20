@@ -1,6 +1,6 @@
 ---
 - name: Backup OS and important files
-  hosts: localhost
+  hosts: all
   become: yes # May not be necessary, check once finished role
   
   roles:

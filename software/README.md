@@ -107,4 +107,4 @@ DynDNS is used here due to obvious reasons. I'm using NoIP because ISP's router 
     - *Arr
     - Homarr
     - MC
-- Not using Docker for PiHole/PiVPN and Monitoring Software because Docker is not the preferred installation method or it does not make sense (VPN behind a container is unnecessary, WireGuard is very stable, adding containers is just adding overhead and IP problems)  
+- Not using Docker for PiHole/PiVPN and Monitoring Software because Docker is not the preferred installation method or it does not make sense (VPN behind a container is unnecessary, WireGuard is very stable, adding containers is just adding overhead and IP problems)

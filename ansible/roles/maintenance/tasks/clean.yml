@@ -20,3 +20,5 @@
     images: true
     images_filters:
       until: "{{ docker_prune_filter }}" # Same as containers
+
+# TODO: Check logrotate role on Ansible Galaxy. Run once every month, for example

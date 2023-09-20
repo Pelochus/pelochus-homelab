@@ -1,0 +1,17 @@
+---
+- name: Enable Docker
+  service:
+    name: docker
+    state: restarted
+    enabled: yes
+
+# TODO
+# - name: Configure Samba
+
+#   notify: Enable Samba
+
+- name: Enable Samba
+  service:
+    name: smbd
+    stated: restarted
+    enabled: yes
