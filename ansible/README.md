@@ -1,6 +1,18 @@
 # Ansible
 This README serves as a short explanation of the Ansible configuration for this server
 
+## Running
+Right now, no previous Ansible configuration is needed if running as root
+
+After cloning this repo, run in order:
+
+```shell
+ansible-playbook os-config.yml
+ansible-playbook software-deploy.yml
+```
+
+It is better to run independently just in case anything fails. Once both playbooks finished succesfully, the other two playbooks should run automatically once a week
+
 ## Playbooks
 My server has 4 main playbooks:
 - **os-config.yml:** Setups some basic Linux configuration for the first time, like aliases and crontab
