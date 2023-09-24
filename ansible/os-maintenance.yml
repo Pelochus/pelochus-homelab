@@ -6,6 +6,7 @@
   roles: 
     - maintenance
 
+  # TODO: Cannot be run on localhost, find a solution or alternative
   post_tasks:
     - name: Reboot OS
       reboot:

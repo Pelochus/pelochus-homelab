@@ -9,6 +9,14 @@ Personal home server configuration and automation. I use this repo as a reminder
 - Substituting (partially) Bash for Ansible
 - Completed backups section
 
+## More info
+More info about this repo in the [wiki](https://github.com/Pelochus/pelochus-homelab/wiki). You can find:
+- Hardware used
+- OS used and its configuration
+- Software installed and deployed
+- Backups strategy
+- Technical information about Ansible automation and Docker containers used
+
 ## TODO:
 - Use nginx as a reverse proxy
   - Configure SSL with Lets Encrypt, allowing for secure connection to the proxy and all its subsequent subdomains 
