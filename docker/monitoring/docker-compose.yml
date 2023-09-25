@@ -1,1 +1,34 @@
-# Include here: grafana, netdata, prometheus and homarr
+---
+# This Docker compose file includes:
+#   Homarr
+#   Grafana
+#   Prometheus?
+#   Netdata?
+
+version: '3'
+
+services:
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Madrid
+    volumes:
+      - ./homarr/configs:/app/data/configs
+      - ./homarr/icons:/app/public/icons
+      - /var/run/docker.sock:/var/run/docker.sock # For controlling Docker within Homarr
+    ports:
+      - '7575:7575'
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana-enterprise
+    restart: unless-stopped
+    # if you are running as root then set it to 0
+    # else find the right id with the id -u command
+    user: '0'
+    volumes:
+      - ./grafana:/var/lib/grafana
+    ports:
+      - '3000:3000'

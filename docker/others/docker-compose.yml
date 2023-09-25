@@ -1,1 +1,3 @@
+---
 # Include here things like Minecraft or other unrelated docker containers
+version: '3'
