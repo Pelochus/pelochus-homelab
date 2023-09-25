@@ -1,14 +1,23 @@
 ---
-# Think about using templates for this
 - name: Add aliases to .bashrc
+  blockinfile:
+    path: "{{ bashrc_path }}"
+    marker: "# {mark} Ansible managed aliases block"
+    block: "{{ lookup('ansible.builtin.file', 'aliases-list.txt') }}"
 
-# Think about using templates for this
+
+# Sets a cronjob to run the maintenance playbook at 5am on Mondays
 - name: Set crontab for automating tasks
   cron:
+    name: "Run OS maintenance playbook"
+    minute: "0"
+    hour: "5"
+    dow: "1"
+    job: "ansible-playbook {{ maintenance_path }}"
 
 # This can include drivers, for example
 - name: Install OS-related dependencies
   apt:
-    pkg: 
+    pkg:
       "{{ syspkgs }}"
     state: latest
