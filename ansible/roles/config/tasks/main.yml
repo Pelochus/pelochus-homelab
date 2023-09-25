@@ -13,7 +13,7 @@
     minute: "0"
     hour: "5"
     dow: "1"
-    job: "ansible-playbook {{ maintenance_path }}"
+    job: "ansible-playbook {{ maintenance_path }} && reboot"
 
 # This can include drivers, for example
 - name: Install OS-related dependencies
