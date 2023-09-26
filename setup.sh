@@ -27,13 +27,13 @@ options() {
     
         # Do something
         2 | 1)
-            ansible-playbook ./ansible/os-config.yml
+            ansible-playbook os-config.yml
         ;;& 
         # This "&" makes it possible to execute following options
 
         # Do something 2
         3 | 1)
-            ansible-playbook ./ansible/software-deploy.yml
+            ansible-playbook software-deploy.yml
         ;;
 
         # Exit
@@ -101,10 +101,11 @@ then
     apt install ansible -y
 
     clear
+    cd ansible
 
     while true
     do
-        menu 
+        menu
         read chosen 
         options $chosen
     done
