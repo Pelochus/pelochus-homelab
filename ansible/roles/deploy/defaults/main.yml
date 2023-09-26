@@ -32,9 +32,9 @@ samba_user: root
 samba_name: BolloNAS
 samba_shared: /media/hdd/BolloNAS
 
-# TODO: Check if this path is possible (or use ./docker)
+# NOTE: This paths are relative to playbook_dir, so initial path is pelochus-homelab/ansible
 compose_files:
-  - ../../docker/media
-  - ../../docker/monitoring
-  - ../../docker/networking
-  - ../../docker/others
+  - ../docker/media
+  - ../docker/monitoring
+  - ../docker/networking
+  - ../docker/others
