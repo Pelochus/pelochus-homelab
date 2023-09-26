@@ -27,14 +27,13 @@ options() {
     
         # Do something
         2 | 1)
-            
+            ansible-playbook ./ansible/os-config.yml
         ;;& 
-        # This "&" makes it possible to execute following options. Used for executing 1 and 2 when 3 is the input
+        # This "&" makes it possible to execute following options
 
         # Do something 2
         3 | 1)
-            echo "I'm doing something 2"
-            sleep 2
+            ansible-playbook ./ansible/software-deploy.yml
         ;;
 
         # Exit
