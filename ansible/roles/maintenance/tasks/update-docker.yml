@@ -1,0 +1,20 @@
+---
+- include_vars: ../../deploy/defaults/main.yml
+
+- name: Stop and remove Compose containers
+  compose:
+    project_name: "{{ item }}"
+    state: absent
+    timeout: 120
+  with_items: "{{ compose_files }}"
+
+- name: Update and restart Docker containers
+  compose:
+    project_name: "{{ item }}"
+    pull: yes
+    state: present
+  with_items: "{{ compose_files }}"
+  register: docker_result
+
+# Print update result
+# - debug: msg="{{ docker_result }}"

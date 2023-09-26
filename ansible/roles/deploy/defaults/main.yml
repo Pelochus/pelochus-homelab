@@ -6,6 +6,7 @@ packages:
   - rsync
   - docker
   - docker-compose 
+  - uptimed
   - wget
   - curl
   - nano

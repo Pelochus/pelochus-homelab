@@ -1,9 +1,8 @@
 ---
 # This Docker compose file includes:
 #   Homarr
-#   Grafana
-#   Prometheus?
-#   Netdata?
+#   Netdata
+#   Grafana TODO: Migrate from Netdata to Grafana eventually
 
 version: '3'
 
@@ -21,14 +20,36 @@ services:
     ports:
       - '7575:7575'
 
-  grafana:
-    container_name: grafana
-    image: grafana/grafana-enterprise
+  netdata:
+    container_name: netdata
+    image: netdata/netdata
+    pid: host
+    network_mode: host
     restart: unless-stopped
-    # if you are running as root then set it to 0
-    # else find the right id with the id -u command
-    user: '0'
+    cap_add:
+      - SYS_PTRACE
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
     volumes:
-      - ./grafana:/var/lib/grafana
-    ports:
-      - '3000:3000'
+      - ./netdata/config:/etc/netdata
+      - ./netdata/lib:/var/lib/netdata
+      - ./netdata/cache:/var/cache/netdata
+      - /etc/passwd:/host/etc/passwd:ro
+      - /etc/group:/host/etc/group:ro
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /etc/os-release:/host/etc/os-release:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+#  grafana:
+#    container_name: grafana
+#    image: grafana/grafana-enterprise
+#    restart: unless-stopped
+#    # if you are running as root then set it to 0
+#    # else find the right id with the id -u command
+#    user: '0'
+#    volumes:
+#      - ./grafana:/var/lib/grafana
+#    ports:
+#      - '3000:3000'

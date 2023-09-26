@@ -16,6 +16,3 @@
 
 # Print update result
 # - debug: msg="{{ pihole_result }}"
-
-# TODO
-# - name: Update Docker containers

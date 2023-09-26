@@ -19,6 +19,9 @@
 
     images: true
     images_filters:
+      dangling: false # Remove all images unused, except the ones referenced by at least one container
       until: "{{ docker_prune_filter }}" # Same as containers
+
+    builder_cache: true
 
 # TODO: Check logrotate role on Ansible Galaxy. Run once every month, for example

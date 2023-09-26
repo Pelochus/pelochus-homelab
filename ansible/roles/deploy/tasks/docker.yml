@@ -9,8 +9,10 @@
     state: latest
   notify: Enable Docker
 
-# Remember that item is a reserved word for loops
+# Remember that item is a reserved keyword for loops/with_items
 - name: Deploy containers with Compose
   docker_compose:
     project_src: "{{ item }}"
-  loop: "{{ compose_files }}"
+    pull: yes
+    state: present
+  with_items: "{{ compose_files }}"
