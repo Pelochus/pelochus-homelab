@@ -13,7 +13,6 @@ packages:
   - htop
   - iperf
   - iperf3
-  - python
   - python3
   - pip
   - gnupg
