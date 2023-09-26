@@ -10,6 +10,6 @@
   register: install_results
   notify: 
     - Enable Docker
-  # TODO: - Configure Samba
+    - Configure Samba
 
 # - debug: msg="{{ install_results }}"

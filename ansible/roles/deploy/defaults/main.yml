@@ -1,5 +1,4 @@
 ---
-# TODO Check samba alternative: ksmbd (kernel implementation of Samba)
 packages:
   - exa
   - git
@@ -13,6 +12,8 @@ packages:
   - htop
   - iperf
   - iperf3
+  - python
+  - python3
   - pip
   - gnupg
   - rsync
@@ -24,5 +25,16 @@ packages:
 
 apt_max_cache_age_installs: 3600 # One hour
 
-# compose-files:
-# Put path here to compose file(s)
+# TODO: Check samba alternative: ksmbd (kernel implementation of Samba)
+# Samba related configuration
+samba_conf: /etc/samba/smb.conf
+samba_user: root
+samba_name: BolloNAS
+samba_shared: /media/hdd/BolloNAS
+
+# TODO: Check if this path is possible (or use ./docker)
+compose_files:
+  - ../../docker/media
+  - ../../docker/monitoring
+  - ../../docker/networking
+  - ../../docker/others

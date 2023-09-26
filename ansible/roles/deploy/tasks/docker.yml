@@ -9,5 +9,8 @@
     state: latest
   notify: Enable Docker
 
-# - name: Deploy containers with Compose
-    
+# Remember that item is a reserved word for loops
+- name: Deploy containers with Compose
+  docker_compose:
+    project_src: "{{ item }}"
+  loop: "{{ compose_files }}"
