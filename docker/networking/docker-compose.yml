@@ -2,7 +2,7 @@
 # Include here: NGINX Proxy Manager, PiHole?...
 
 # TODO: Uncomment for final version when trying out NGINX Proxy Manager
-# version: '3'
+version: '3'
 
 # services:
 #  nginx-proxy:
