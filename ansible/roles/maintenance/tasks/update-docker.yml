@@ -3,14 +3,14 @@
 
 - name: Stop and remove Compose containers
   docker_compose:
-    project_name: "{{ item }}"
+    project_src: "{{ item }}"
     state: absent
     timeout: 120
   with_items: "{{ compose_files }}"
 
 - name: Update and restart Docker containers
   docker_compose:
-    project_name: "{{ item }}"
+    project_src: "{{ item }}"
     pull: yes
     state: present
   with_items: "{{ compose_files }}"
