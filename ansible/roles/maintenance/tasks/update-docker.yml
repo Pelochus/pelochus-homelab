@@ -1,5 +1,5 @@
 ---
-- include_vars: ../../deploy/defaults/main.yml
+- include_vars: ../deploy/defaults/main.yml
 
 - name: Stop and remove Compose containers
   docker_compose:
