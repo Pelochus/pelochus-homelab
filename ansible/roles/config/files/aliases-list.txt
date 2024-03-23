@@ -6,3 +6,6 @@ alias ls='exa -laa'
 
 # Colored ip output
 alias ip='ip -c'
+
+# Better cd ..
+alias ..='cd ..'
