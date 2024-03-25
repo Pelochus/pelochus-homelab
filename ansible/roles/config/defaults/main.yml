@@ -2,4 +2,7 @@
 bashrc_path: /home/{{ user }}/.bashrc
 maintenance_path: /home/{{ user }}/pelochus-homelab/ansible/os-maintenance.yml
 syspkgs:
+  eza
+  build-essential
+  net-tools
   # TODO
