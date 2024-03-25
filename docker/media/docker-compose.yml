@@ -85,7 +85,7 @@ services:
       - ./sonarr/config:/config
       - ./sonarr/config:/data
     restart: 'unless-stopped'
-    depends_on: 
+    depends_on:
       - qbittorrent-nox
 
   ####################################################
