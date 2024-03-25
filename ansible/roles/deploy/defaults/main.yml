@@ -15,7 +15,7 @@ packages:
   - python3-full
   - python-is-python3
   - pip
-  - python-docker
+  - python3-docker
   - gnupg
   - rsync
   - bleachbit
