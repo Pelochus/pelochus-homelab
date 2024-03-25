@@ -1,5 +1,5 @@
 ---
-bashrc_path: /{{ ansible_user }}/.bashrc
-maintenance_path: /home/{{ ansible_user }}/pelochus-homelab/ansible/os-maintenance.yml
+bashrc_path: /home/{{ user }}/.bashrc
+maintenance_path: /home/{{ user }}/pelochus-homelab/ansible/os-maintenance.yml
 syspkgs:
   # TODO
