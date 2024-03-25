@@ -1,0 +1,8 @@
+# Ignore whole docker dir
+docker/
+
+# Except for
+!docker/media/docker-compose.yml
+!docker/monitoring/docker-compose.yml
+!docker/networking/docker-compose.yml
+!docker/others/docker-compose.yml

@@ -4,8 +4,6 @@
 #   Netdata
 #   Grafana TODO: Migrate from Netdata to Grafana, eventually
 
-version: '3'
-
 services:
   homarr:
     container_name: homarr

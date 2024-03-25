@@ -5,8 +5,6 @@
 #   Jellyfin
 #   Jellyseer
 
-version: '3'
-
 services:
   qbittorrent-nox:
     container_name: qbittorrent-nox

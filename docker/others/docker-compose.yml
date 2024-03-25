@@ -1,7 +1,5 @@
 ---
 # TODO Include here things like Minecraft or other unrelated docker containers
-version: '3'
-
 services:
   code-server:
     image: lscr.io/linuxserver/code-server:latest
@@ -12,10 +10,10 @@ services:
       - TZ=Europe/Madrid
       - PASSWORD=password # optional
       - HASHED_PASSWORD= # optional
-      - SUDO_PASSWORD=password # optional
+      - SUDO_PASSWORD= # optional
       - SUDO_PASSWORD_HASH= # optional
       - PROXY_DOMAIN=code-server.my.domain # optional
-      - DEFAULT_WORKSPACE=/home/ # optional
+      - DEFAULT_WORKSPACE= # optional
     volumes:
       - ./code-server/config:/config
     ports:
