@@ -3,8 +3,8 @@ packages:
   - git
   - sudo
   - rsync
-  - docker
-  - docker-compose
+ # - docker
+ # - docker-compose
   - uptimed
   - wget
   - curl
@@ -12,9 +12,10 @@ packages:
   - htop
   - iperf
   - iperf3
-  - python3
+  - python3-full
   - python-is-python3
   - pip
+  - python-docker
   - gnupg
   - rsync
   - bleachbit

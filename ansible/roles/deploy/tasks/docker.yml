@@ -4,8 +4,8 @@
     update_cache: yes
     cache_valid_time: "{{ apt_max_cache_age_installs }}" # Stricter cache time for installs than updates
     pkg:
-      - docker
-      - docker-compose
+      # - docker
+      # - docker-compose
     state: latest
   notify: Enable Docker
 
