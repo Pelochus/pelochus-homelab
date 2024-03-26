@@ -93,12 +93,14 @@ services:
   jellyfin:
     container_name: jellyfin
     image: jellyfin/jellyfin
-    user: uid:gid
+    user: pelochus:pelochus
     network_mode: 'host'
     volumes:
       - ./jellyfin/config:/config
       - ./jellyfin/cache:/cache
-      - /media/hdd/BolloNAS/Jellyfin:/media
+      - type: bind
+        source: /media/hdd/BolloNAS/Jellyfin
+        target: /media
       # - /path/to/media2:/media2:ro
     restart: 'unless-stopped'
     # Optional - may be necessary for docker healthcheck to pass if running in host network mode

@@ -14,6 +14,7 @@ services:
     volumes:
       - ./homarr/configs:/app/data/configs
       - ./homarr/icons:/app/public/icons
+      - ./homarr/data:/data
       - /var/run/docker.sock:/var/run/docker.sock # For controlling Docker within Homarr
     ports:
       - '7575:7575'
