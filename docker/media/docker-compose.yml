@@ -93,7 +93,7 @@ services:
   jellyfin:
     container_name: jellyfin
     image: jellyfin/jellyfin
-    user: pelochus:pelochus
+    user: 1000:1000 # Remember to change using id -u : id -g
     network_mode: 'host'
     volumes:
       - ./jellyfin/config:/config
