@@ -16,7 +16,7 @@ services:
       - ./homarr/icons:/app/public/icons
       - /var/run/docker.sock:/var/run/docker.sock # For controlling Docker within Homarr
     ports:
-      - '80:7575'
+      - '7575:7575'
 
   netdata:
     container_name: netdata

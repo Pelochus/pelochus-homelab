@@ -8,14 +8,15 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Madrid
-      - PASSWORD=password # optional
+      - PASSWORD= # optional
       - HASHED_PASSWORD= # optional
       - SUDO_PASSWORD= # optional
       - SUDO_PASSWORD_HASH= # optional
       - PROXY_DOMAIN=code-server.my.domain # optional
-      - DEFAULT_WORKSPACE= # optional
+      - DEFAULT_WORKSPACE=/home # optional
     volumes:
       - ./code-server/config:/config
+      - /home/:/home
     ports:
       - 8443:8443
     restart: unless-stopped
