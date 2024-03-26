@@ -7,7 +7,7 @@
 
 - name: Configure Samba
   template:
-    src: smb.conf.j2 
+    src: "{{ samba_template }}"
     dest: "{{ samba_conf }}"
     owner: {{ user }}
     group: {{ user }}
