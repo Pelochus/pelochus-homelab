@@ -27,7 +27,8 @@ packages:
 apt_max_cache_age_installs: 3600 # One hour
 
 # Valid for both ksmbd and smbd
-samba_conf: /etc/samba/smb.conf
+# samba_conf: /etc/samba/smb.conf
+samba_conf: /etc/ksmbd/ksmbd.conf
 samba_user: {{ user }}
 samba_name: BolloNAS
 samba_shared: /media/hdd/BolloNAS
