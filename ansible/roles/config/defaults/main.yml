@@ -5,4 +5,5 @@ syspkgs:
   eza
   build-essential
   net-tools
+  wireless-tools
   # TODO

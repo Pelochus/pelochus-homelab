@@ -9,8 +9,8 @@
   template:
     src: smb.conf.j2 
     dest: "{{ samba_conf }}"
-    owner: root
-    group: root
+    owner: {{ user }}
+    group: {{ user }}
   notify: Enable Samba
 
 - name: Enable Samba

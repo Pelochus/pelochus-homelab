@@ -3,8 +3,7 @@ packages:
   - git
   - sudo
   - rsync
- # - docker
- # - docker-compose
+ # - docker.io # Uncomment if preferring Debian/Ubuntu official package
   - uptimed
   - wget
   - curl
@@ -20,8 +19,9 @@ packages:
   - rsync
   - bleachbit
   - speedtest-cli
-  - samba
-  - samba-common-bin
+  # - samba
+  # - samba-common-bin
+  - ksmbd-tools
   - neofetch
 
 apt_max_cache_age_installs: 3600 # One hour

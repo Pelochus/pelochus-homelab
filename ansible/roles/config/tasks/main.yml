@@ -21,3 +21,4 @@
     pkg:
       "{{ syspkgs }}"
     state: latest
+  become: true
