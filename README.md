@@ -22,11 +22,7 @@ More info about this repo in the [wiki](https://github.com/Pelochus/pelochus-hom
 
 ## TODO:
 - Software to install: PyLoad (download client for any weblink) and Offline Overleaf with ShareLatex.
-- Use NGINX as a reverse proxy
-  - Configure SSL with Lets Encrypt, allowing for secure connection to the proxy and all its subsequent subdomains 
-  - This also allows to assign a subdomains names like: ```pihole.node1.lan```, ```jellyfin.node2.lan```...
 - Use this network config when migrating to Docker
   - Use 10.0.0.0/16 private addressing, for simplicity. For example, 10.0.0.0/8 reserved for DHCP devices (smartphones, tablets, IoT...), 10.0.1.0/8 for Docker containers in node 1 (assuming future configuration of cluster)...
   - Once every service has its own container and IP, change the network accordingly (subnetting?)
-  - Assign a local hostname to each service IP (for example, pi.hole, jellyfin.lan, radarr.lan, netdata.lan...)
 - Think of backups automation (Rsync + Bash or Ansible)
