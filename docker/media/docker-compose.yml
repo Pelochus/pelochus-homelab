@@ -5,6 +5,7 @@
 #   Jellyfin
 #   Jellyseer
 
+# Use docker logs qbittorrent-nox for seeing temporal password on first run
 services:
   qbittorrent-nox:
     container_name: qbittorrent-nox

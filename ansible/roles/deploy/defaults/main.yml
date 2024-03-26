@@ -26,10 +26,9 @@ packages:
 
 apt_max_cache_age_installs: 3600 # One hour
 
-# TODO: Check samba alternative: ksmbd (kernel implementation of Samba)
-# Samba related configuration
+# Valid for both ksmbd and smbd
 samba_conf: /etc/samba/smb.conf
-samba_user: root
+samba_user: {{ user }}
 samba_name: BolloNAS
 samba_shared: /media/hdd/BolloNAS
 
