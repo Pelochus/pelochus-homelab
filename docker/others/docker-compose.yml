@@ -17,6 +17,7 @@ services:
     volumes:
       - ./code-server/config:/config
       - /home/:/home
+      - /media:/media
     ports:
       - 8443:8443
     restart: unless-stopped

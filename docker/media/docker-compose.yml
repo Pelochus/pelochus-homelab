@@ -66,6 +66,7 @@ services:
     volumes:
       - ./radarr/config:/config
       - ./radarr/data:/data
+      - /media:/media
     restart: 'unless-stopped'
     depends_on:
       - qbittorrent-nox
@@ -83,6 +84,7 @@ services:
     volumes:
       - ./sonarr/config:/config
       - ./sonarr/config:/data
+      - /media:/media
     restart: 'unless-stopped'
     depends_on:
       - qbittorrent-nox
