@@ -99,6 +99,7 @@ services:
     user: 1000:1000 # Remember to change using id -u : id -g
     network_mode: 'host'
     volumes:
+      - /dev/dri:/dev/dri # Allow access to GPU and Hardware Acceleration
       - ./jellyfin/config:/config
       - ./jellyfin/cache:/cache
       - type: bind
