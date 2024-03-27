@@ -99,7 +99,6 @@ services:
     user: 1000:1000 # Remember to change using id -u : id -g
     network_mode: 'host'
     volumes:
-      - /dev/dri:/dev/dri # Allow access to GPU and Hardware Acceleration
       - ./jellyfin/config:/config
       - ./jellyfin/cache:/cache
       - type: bind
@@ -110,6 +109,9 @@ services:
     # Optional - may be necessary for docker healthcheck to pass if running in host network mode
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    devices: # Allow Intel/AMD HW acceleration
+      - /dev/dri/renderD128:/dev/dri/renderD128
+      - /dev/dri/card0:/dev/dri/card0
 
   jellyseerr:
     container_name: jellyseerr
