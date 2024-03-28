@@ -33,6 +33,7 @@ services:
     volumes:
       - ./qbittorrent/config:/config
       - /media/hdd/BolloNAS/Torrents:/downloads
+      - /media:/media
     restart: 'unless-stopped'
 
   ####################################################
@@ -112,6 +113,8 @@ services:
     devices: # Allow Intel/AMD HW acceleration
       - /dev/dri/renderD128:/dev/dri/renderD128
       - /dev/dri/card0:/dev/dri/card0
+    groups:
+      - 993 # Search for render group id with: cat /etc/group | grep render
 
   jellyseerr:
     container_name: jellyseerr
