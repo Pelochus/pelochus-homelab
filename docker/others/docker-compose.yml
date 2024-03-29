@@ -21,3 +21,19 @@ services:
     ports:
       - 8443:8443
     restart: unless-stopped
+
+  pyload-ng:
+    image: lscr.io/linuxserver/pyload-ng:latest
+    container_name: pyload-ng
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+    volumes:
+      - ./pyload-ng/config:/config
+      - /media/hdd/pyload-ng:/downloads
+    ports:
+      - 8000:8000
+      - 9666:9666 #optional
+    restart: unless-stopped
+
