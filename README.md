@@ -21,7 +21,6 @@ More info about this repo in the [wiki](https://github.com/Pelochus/pelochus-hom
 - Technical information about Ansible automation and Docker containers used
 
 ## TODO:
-- Software to install: PyLoad (download client for any weblink) and Offline Overleaf with ShareLatex.
 - Use this network config when migrating to Docker
   - Use 10.0.0.0/16 private addressing, for simplicity. For example, 10.0.0.0/8 reserved for DHCP devices (smartphones, tablets, IoT...), 10.0.1.0/8 for Docker containers in node 1 (assuming future configuration of cluster)...
   - Once every service has its own container and IP, change the network accordingly (subnetting?)
