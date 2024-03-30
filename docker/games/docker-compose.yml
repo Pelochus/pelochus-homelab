@@ -23,7 +23,7 @@ services:
       BedrockPort: "19132"
       TZ: "Europe/Madrid" # timezone
       BackupCount: 5 # Number of backups the server keeps
-      MaxMemory: 2048 # Maximum memory usage for Java (MB)
+      MaxMemory: 3064 # Maximum memory usage for Java (MB). Currently 3GB
       Version: 1.20.4 # Use custom version
       #NoBackup: "plugins" # Optional folder to skip during backups
       #NoPermCheck: "Y" # Optional flag to skip permissions check
