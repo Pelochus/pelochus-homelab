@@ -1,0 +1,29 @@
+---
+services:
+  minecraft:
+    container_name: minecraft
+    image: 05jchambers/legendary-minecraft-purpur-geyser:latest
+    ports:
+      # Minecraft Java
+      - 25565:25565/tcp
+      # Minecraft Bedrock
+      - 19132:19132/tcp
+      - 19132:19132/udp
+    volumes:
+      - ./minecraft:/minecraft
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    entrypoint: [ "/bin/bash", "/scripts/start.sh" ]
+    # Environment variables
+    environment:
+      Port: "25565"
+      BedrockPort: "19132"
+      TZ: "Europe/Madrid" # timezone
+      BackupCount: 5 # Number of backups the server keeps
+      MaxMemory: 2048 # Maximum memory usage for Java (MB)
+      Version: 1.20.4 # Use custom version
+      #NoBackup: "plugins" # Optional folder to skip during backups
+      #NoPermCheck: "Y" # Optional flag to skip permissions check
+      #NoViaVersion: "Y" # Optional flag to disable ViaVersion plugin
+      #QuietCurl: "Y" # Optional flag to reduce curl log output by suppressing progress meter
+    restart: 'unless-stopped'
