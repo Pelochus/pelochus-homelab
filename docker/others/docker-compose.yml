@@ -1,5 +1,5 @@
 ---
-# TODO Include here things like Minecraft or other unrelated docker containers
+
 services:
   code-server:
     image: lscr.io/linuxserver/code-server:latest

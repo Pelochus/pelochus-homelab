@@ -6,3 +6,4 @@ docker/
 !docker/monitoring/docker-compose.yml
 !docker/networking/docker-compose.yml
 !docker/others/docker-compose.yml
+!docker/games/docker-compose.yml
