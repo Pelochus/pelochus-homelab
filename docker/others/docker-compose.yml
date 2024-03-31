@@ -31,7 +31,7 @@ services:
       - TZ=Europe/Madrid
     volumes:
       - ./pyload-ng/config:/config
-      - /media/hdd/pyload-ng:/downloads
+      - /media/hdd/BolloNAS/Descargas/pyload-ng:/downloads
     ports:
       - 8000:8000
       - 9666:9666 #optional
