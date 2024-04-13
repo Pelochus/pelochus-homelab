@@ -9,7 +9,8 @@ You can see my Homarr instance here, with all the services I have. On the right,
 - Better network organisation (using 10.0.0.0/16 address space)
 - Use of Docker containers and Docker Compose instead of bare-metal installing
 - Added NGINX reverse proxy + using PiHole for organising IPs into local domain names
-- Changing from Bash to Ansible
+- Changed to Wireguard Easy
+- Changed from Bash to Ansible
 - Completed backups section
 
 ## More info
