@@ -4,7 +4,7 @@ Everything encrypted (for security reasons) in the zip
 
 This includes:
 - Pi-Hole
-- Pi-VPN
+- Wireguard Easy
 - Homarr
 - *Arr
 - OctoPi (outside this server)
