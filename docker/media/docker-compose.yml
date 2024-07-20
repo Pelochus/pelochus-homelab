@@ -1,7 +1,7 @@
 ---
 # This Docker compose file includes:
 #   qBittorrent-nox (no GUI, but with webUI)
-#   *Arr (Sonarr, Radarr, Prowlarr)
+#   *Arr (Sonarr, Radarr, Readarr, Prowlarr)
 #   Jellyfin
 #   Jellyseer
 
@@ -86,6 +86,23 @@ services:
       - ./sonarr/config:/config
       - ./sonarr/config:/data
       - /media:/media
+    restart: 'unless-stopped'
+    depends_on:
+      - qbittorrent-nox
+
+  readarr:
+    container_name: readarr
+    image: ghcr.io/hotio/readarr
+    ports:
+      - "8787:8787"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=Etc/UTC
+    volumes:
+      - ./readarr/config:/config
+      - ./readar/data:/data
     restart: 'unless-stopped'
     depends_on:
       - qbittorrent-nox
