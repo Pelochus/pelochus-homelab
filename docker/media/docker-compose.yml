@@ -103,6 +103,7 @@ services:
     volumes:
       - ./readarr/config:/config
       - ./readar/data:/data
+      - /media:/media
     restart: 'unless-stopped'
     depends_on:
       - qbittorrent-nox
