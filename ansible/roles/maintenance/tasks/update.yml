@@ -1,5 +1,5 @@
----  
-- name: Update and full-upgrade system 
+---
+- name: Update and full-upgrade system
   apt:
     update_cache: yes
     cache_valid_time: "{{ apt_max_cache_age_updates }}" # See ../defaults/main.yml

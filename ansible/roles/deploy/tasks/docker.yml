@@ -11,7 +11,7 @@
 
 # Remember that item is a reserved keyword for loops/with_items
 - name: Deploy containers with Compose
-  docker_compose:
+  community.docker.docker_compose_v2:
     project_src: "{{ item }}"
     pull: yes
     state: present
