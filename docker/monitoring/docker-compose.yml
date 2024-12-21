@@ -26,7 +26,7 @@ services:
     container_name: netdata
     image: netdata/netdata
     pid: host
-    network_mode: host
+    # network_mode: host # If returning to this setting, no need to add ports setting
     restart: unless-stopped
     cap_add:
       - SYS_PTRACE
