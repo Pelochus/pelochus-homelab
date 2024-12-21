@@ -2,6 +2,7 @@
 docker/
 
 # Except for
+!docker/web/
 !docker/media/docker-compose.yml
 !docker/monitoring/docker-compose.yml
 !docker/networking/docker-compose.yml

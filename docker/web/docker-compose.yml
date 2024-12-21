@@ -1,0 +1,10 @@
+---
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8888:80"
+    volumes:
+      - ./webfiles:/usr/share/nginx/html:ro
+    restart: unless-stopped
