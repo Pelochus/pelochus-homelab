@@ -24,7 +24,7 @@ services:
       - 6881:6881/tcp
       - 6881:6881/udp
       # for WebUI
-      - 8080:8080/tcp
+      # - 8080:8080/tcp
     read_only: true
     stop_grace_period: 30m
     tmpfs:
@@ -46,8 +46,8 @@ services:
   prowlarr:
     container_name: prowlarr
     image: ghcr.io/hotio/prowlarr
-    ports:
-      - "9696:9696"
+    # ports:
+      # - "9696:9696"
     environment:
       - PUID=1000
       - PGID=1000
@@ -63,8 +63,8 @@ services:
   radarr:
     container_name: radarr
     image: ghcr.io/hotio/radarr
-    ports:
-      - "7878:7878"
+    # ports:
+    #   - "7878:7878"
     environment:
       - PUID=1000
       - PGID=1000
@@ -84,8 +84,8 @@ services:
   sonarr:
     container_name: sonarr
     image: ghcr.io/hotio/sonarr
-    ports:
-      - "8989:8989"
+    # ports:
+    #   - "8989:8989"
     environment:
       - PUID=1000
       - PGID=1000
@@ -105,8 +105,8 @@ services:
   readarr:
     container_name: readarr
     image: ghcr.io/hotio/readarr
-    ports:
-      - "8787:8787"
+    # ports:
+    #   - "8787:8787"
     environment:
       - PUID=1000
       - PGID=1000
@@ -158,8 +158,8 @@ services:
     environment:
         - LOG_LEVEL=debug
         - TZ=Europe/Madrid
-    ports:
-        - 5055:5055
+    # ports:
+    #     - 5055:5055
     volumes:
         - ./jellyseer/config:/app/config
     restart: unless-stopped

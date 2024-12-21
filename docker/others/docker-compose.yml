@@ -18,8 +18,8 @@ services:
       - ./code-server/config:/config
       - /home/:/home
       - /media:/media
-    ports:
-      - 8443:8443
+    # ports:
+      # - 8443:8443
     restart: unless-stopped
     networks:
       homelab:
@@ -36,7 +36,7 @@ services:
       - ./pyload-ng/config:/config
       - /media/hdd/BolloNAS/Descargas/pyload-ng:/downloads
     ports:
-      - 8000:8000
+      # - 8000:8000 # WebUI port
       - 9666:9666 #optional
     restart: unless-stopped
     networks:

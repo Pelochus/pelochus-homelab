@@ -31,7 +31,7 @@ services:
       - ./wireguard:/etc/wireguard
     ports:
       - "51820:51820/udp"
-      - "51821:51821/tcp" # WebUI port
+      # - "51821:51821/tcp" # WebUI port
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
@@ -49,7 +49,7 @@ services:
     restart: unless-stopped
     ports:
       - '80:80'
-      - '81:81' # WebUI port TODO: Should be commented for improved security
+      # - '81:81' # WebUI port
       - '443:443'
     volumes:
       - ./nginx/data:/data
