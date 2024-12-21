@@ -35,6 +35,9 @@ services:
       - /media/hdd/BolloNAS/Torrents:/downloads
       - /media:/media
     restart: 'unless-stopped'
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.17
 
   ####################################################
   # Arr configuration is extracted from hotio's images
@@ -53,6 +56,9 @@ services:
     volumes:
       - ./prowlarr/config:/config
     restart: 'unless-stopped'
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.18
 
   radarr:
     container_name: radarr
@@ -71,6 +77,9 @@ services:
     restart: 'unless-stopped'
     depends_on:
       - qbittorrent-nox
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.19
 
   sonarr:
     container_name: sonarr
@@ -89,6 +98,9 @@ services:
     restart: 'unless-stopped'
     depends_on:
       - qbittorrent-nox
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.20
 
   readarr:
     container_name: readarr
@@ -107,6 +119,9 @@ services:
     restart: 'unless-stopped'
     depends_on:
       - qbittorrent-nox
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.21
 
   ####################################################
   # End of Arr configuration
@@ -133,6 +148,9 @@ services:
       - /dev/dri/card0:/dev/dri/card0
     group_add:
       - 993 # Search for render group id with: cat /etc/group | grep render
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.22
 
   jellyseerr:
     container_name: jellyseerr
@@ -149,3 +167,10 @@ services:
       - jellyfin
       - sonarr
       - radarr
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.23
+
+networks:
+  homelab:
+    external: true

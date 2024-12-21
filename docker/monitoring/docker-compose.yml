@@ -18,6 +18,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock # For controlling Docker within Homarr
     ports:
       - '7575:7575'
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.14
 
   netdata:
     container_name: netdata
@@ -40,6 +43,9 @@ services:
       - /sys:/host/sys:ro
       - /etc/os-release:/host/etc/os-release:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.15
 
 #  grafana:
 #    container_name: grafana
@@ -52,3 +58,10 @@ services:
 #      - ./grafana:/var/lib/grafana
 #    ports:
 #      - '3000:3000'
+#    networks:
+#      homelab:
+#        ipv4_address: 10.0.1.15
+
+networks:
+  homelab:
+    external: true
