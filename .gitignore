@@ -7,3 +7,6 @@ docker/
 !docker/networking/docker-compose.yml
 !docker/others/docker-compose.yml
 !docker/games/docker-compose.yml
+
+# Ignore logs folder
+logs/
