@@ -15,6 +15,6 @@
 
 - name: Enable Samba
   service:
-    name: smbd
+    name: ksmbd # smbd if not using kernel Samba
     stated: restarted
     enabled: yes

@@ -3,13 +3,12 @@ packages:
   - git
   - sudo
   - rsync
- # - docker.io # Uncomment if preferring Debian/Ubuntu official package
+ # - docker.io # Better use the official docker install guide
   - uptimed
   - wget
   - curl
   - nano
   - htop
-  - iperf
   - iperf3
   - python3-full
   - python-is-python3
