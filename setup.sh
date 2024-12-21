@@ -27,13 +27,13 @@ options() {
     
         # Do something
         2 | 1)
-            ansible-playbook os-config.yml
+            ansible-playbook -K os-config.yml
         ;;& 
         # This "&" makes it possible to execute following options
 
         # Do something 2
         3 | 1)
-            ansible-playbook software-deploy.yml
+            ansible-playbook -K software-deploy.yml
         ;;
 
         # Exit
@@ -84,8 +84,8 @@ fi
 echo
 echo "-------------------------------------------------------------------------------------"
 echo "This script calls the Ansible playbooks responsible for deploying the homelab"
-echo "If you are running this script as sudo, you can continue, else the script will fail"
-echo "Are you running as sudo? [Y/N]"
+echo "You should not need to run this as sudo, but it will ask the sudo password"
+echo "Continue? [Y/N]"
 echo "-------------------------------------------------------------------------------------"
 echo
 
