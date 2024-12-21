@@ -2,9 +2,17 @@
 
 services:
   web:
+    container_name: web
     image: nginx:latest
     ports:
       - "8888:80"
     volumes:
       - ./webfiles:/usr/share/nginx/html:ro
     restart: unless-stopped
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.11
+
+networks:
+  homelab:
+    external: true
