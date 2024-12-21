@@ -39,3 +39,4 @@ compose_files:
   - ../docker/monitoring
   - ../docker/networking
   - ../docker/others
+  - ../docker/web
