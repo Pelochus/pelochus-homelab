@@ -9,6 +9,7 @@ You can see my Homarr instance here, with all the services I have. On the right,
 - Better network organisation (using 10.0.0.0/16 address space)
 - Use of Docker containers and Docker Compose instead of bare-metal installing
 - Added NGINX reverse proxy + using PiHole for organising IPs into local domain names
+- Used a Docker network for increased security
 - Changed to Wireguard Easy
 - Changed from Bash to Ansible
 - Completed backups section
@@ -22,7 +23,8 @@ More info about this repo in the [wiki](https://github.com/Pelochus/pelochus-hom
 - Technical information about Ansible automation and Docker containers used
 
 ## TODO:
-- Use this network config when migrating to Docker
-  - Use 10.0.0.0/16 private addressing, for simplicity. For example, 10.0.0.0/8 reserved for DHCP devices (smartphones, tablets, IoT...), 10.0.1.0/8 for Docker containers in node 1 (assuming future configuration of cluster)...
-  - Once every service has its own container and IP, change the network accordingly (subnetting?)
+- Use this network config if using a cluster in the future:
+  - 10.0.1.0/24 for node 1 (master?) and its Docker containers
+  - 10.0.2.0/24 for node 2 and its Docker containers 
+  - ...
 - Think of backups automation (Rsync + Bash or Ansible)
