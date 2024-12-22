@@ -1,3 +1,8 @@
+# Regarding ISEW branch
+This branch was created for a course I had taken during my Master's degree. 
+I had to develop a project related to web/servers/DevOps and ultimately chose to improve my current homelab with a webpage, Docker network, new architecture diagram and related changes.
+This branch has these changes, which are now merged to `main`. 
+
 # pelochus-homelab V2
 Personal home server configuration and automation. I use this repo as a reminder of all I did and why I did it in case I want to redo my server from the ground up in the future. This also allows me to skip some steps for future installs since I automated installations, configuration and maintenance. Made it public in case anyone wants to see my personal home server configuration as a point of reference or want to see my skills in Linux administration and DevOps.
 
