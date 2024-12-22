@@ -24,7 +24,7 @@ services:
       - 6881:6881/tcp
       - 6881:6881/udp
       # for WebUI
-      - 8080:8080/tcp
+      # - 8080:8080/tcp
     read_only: true
     stop_grace_period: 30m
     tmpfs:
@@ -35,6 +35,9 @@ services:
       - /media/hdd/BolloNAS/Torrents:/downloads
       - /media:/media
     restart: 'unless-stopped'
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.17
 
   ####################################################
   # Arr configuration is extracted from hotio's images
@@ -43,8 +46,8 @@ services:
   prowlarr:
     container_name: prowlarr
     image: ghcr.io/hotio/prowlarr
-    ports:
-      - "9696:9696"
+    # ports:
+      # - "9696:9696"
     environment:
       - PUID=1000
       - PGID=1000
@@ -53,12 +56,15 @@ services:
     volumes:
       - ./prowlarr/config:/config
     restart: 'unless-stopped'
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.18
 
   radarr:
     container_name: radarr
     image: ghcr.io/hotio/radarr
-    ports:
-      - "7878:7878"
+    # ports:
+    #   - "7878:7878"
     environment:
       - PUID=1000
       - PGID=1000
@@ -71,12 +77,15 @@ services:
     restart: 'unless-stopped'
     depends_on:
       - qbittorrent-nox
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.19
 
   sonarr:
     container_name: sonarr
     image: ghcr.io/hotio/sonarr
-    ports:
-      - "8989:8989"
+    # ports:
+    #   - "8989:8989"
     environment:
       - PUID=1000
       - PGID=1000
@@ -89,12 +98,15 @@ services:
     restart: 'unless-stopped'
     depends_on:
       - qbittorrent-nox
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.20
 
   readarr:
     container_name: readarr
     image: ghcr.io/hotio/readarr
-    ports:
-      - "8787:8787"
+    # ports:
+    #   - "8787:8787"
     environment:
       - PUID=1000
       - PGID=1000
@@ -107,6 +119,9 @@ services:
     restart: 'unless-stopped'
     depends_on:
       - qbittorrent-nox
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.21
 
   ####################################################
   # End of Arr configuration
@@ -116,7 +131,7 @@ services:
     container_name: jellyfin
     image: jellyfin/jellyfin
     user: 1000:1000 # Remember to change using id -u : id -g
-    network_mode: 'host'
+    # network_mode: 'host' # Required for DLNA, incompatible with network settings below
     volumes:
       - ./jellyfin/config:/config
       - ./jellyfin/cache:/cache
@@ -133,6 +148,9 @@ services:
       - /dev/dri/card0:/dev/dri/card0
     group_add:
       - 993 # Search for render group id with: cat /etc/group | grep render
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.22
 
   jellyseerr:
     container_name: jellyseerr
@@ -140,8 +158,8 @@ services:
     environment:
         - LOG_LEVEL=debug
         - TZ=Europe/Madrid
-    ports:
-        - 5055:5055
+    # ports:
+    #     - 5055:5055
     volumes:
         - ./jellyseer/config:/app/config
     restart: unless-stopped
@@ -149,3 +167,10 @@ services:
       - jellyfin
       - sonarr
       - radarr
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.23
+
+networks:
+  homelab:
+    external: true

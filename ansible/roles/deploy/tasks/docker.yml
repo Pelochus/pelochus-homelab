@@ -9,6 +9,14 @@
     state: latest
   notify: Enable Docker
 
+- name: Create Docker Network
+  community.docker.docker_network:
+    name: homelab
+    driver: bridge
+    ipam_options:
+      - subnet: 10.0.1.0/24
+        gateway: 10.0.1.1
+
 # Remember that item is a reserved keyword for loops/with_items
 - name: Deploy containers with Compose
   community.docker.docker_compose_v2:

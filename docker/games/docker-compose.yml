@@ -1,7 +1,7 @@
 ---
 # Note: Run with docker compose up -d if intended to be on background 24/7
 # To see script output use: docker logs minecraft
-# To properly come back to script use: docket attach minecraft (you will not see previous output, use docker logs for that)
+# To properly come back to script use: docker attach minecraft (you will not see previous output, use docker logs for that)
 services:
   minecraft:
     container_name: minecraft

@@ -9,8 +9,8 @@
   template:
     src: "{{ samba_template }}"
     dest: "{{ samba_conf }}"
-    owner: {{ user }}
-    group: {{ user }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
   notify: Enable Samba
 
 - name: Enable Samba

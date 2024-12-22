@@ -16,14 +16,17 @@ services:
       - ./homarr/icons:/app/public/icons
       - ./homarr/data:/data
       - /var/run/docker.sock:/var/run/docker.sock # For controlling Docker within Homarr
-    ports:
-      - '7575:7575'
+    # ports:
+    #   - '7575:7575'
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.14
 
   netdata:
     container_name: netdata
     image: netdata/netdata
     pid: host
-    network_mode: host
+    # network_mode: host # If returning to this setting, no need to add ports setting
     restart: unless-stopped
     cap_add:
       - SYS_PTRACE
@@ -40,6 +43,9 @@ services:
       - /sys:/host/sys:ro
       - /etc/os-release:/host/etc/os-release:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      homelab:
+        ipv4_address: 10.0.1.15
 
 #  grafana:
 #    container_name: grafana
@@ -52,3 +58,10 @@ services:
 #      - ./grafana:/var/lib/grafana
 #    ports:
 #      - '3000:3000'
+#    networks:
+#      homelab:
+#        ipv4_address: 10.0.1.15
+
+networks:
+  homelab:
+    external: true
