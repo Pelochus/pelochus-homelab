@@ -22,6 +22,9 @@ packages:
   # - samba-common-bin
   - ksmbd-tools
   - neofetch
+  # Webpage:
+  - nodejs
+  - npm
 
 apt_max_cache_age_installs: 3600 # One hour
 
@@ -32,6 +35,9 @@ samba_user: "{{ user }}"
 samba_name: BolloNAS
 samba_shared: /media/hdd/BolloNAS
 samba_template: ksmbd.conf.j2
+
+# For building webpage
+web_path: ../docker/web/web
 
 # NOTE: This paths are relative to playbook_dir, so initial path is pelochus-homelab/ansible
 compose_files:
