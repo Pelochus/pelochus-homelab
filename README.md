@@ -13,6 +13,7 @@ You can see my Homarr instance here, with all the services I have. On the right,
 - Changed to Wireguard Easy
 - Changed from Bash to Ansible
 - Completed backups section
+- Extra! Added my own personal webpage
 
 ## More info
 More info about this repo in the [wiki](https://github.com/Pelochus/pelochus-homelab/wiki). You can find:
