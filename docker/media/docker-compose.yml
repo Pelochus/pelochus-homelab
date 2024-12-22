@@ -114,7 +114,7 @@ services:
       - TZ=Etc/UTC
     volumes:
       - ./readarr/config:/config
-      - ./readar/data:/data
+      - ./readarr/data:/data
       - /media:/media
     restart: 'unless-stopped'
     depends_on:
