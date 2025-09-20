@@ -7,14 +7,13 @@
 services:
   homarr:
     container_name: homarr
-    image: ghcr.io/ajnart/homarr:latest
+    image: ghcr.io/homarr-labs/homarr:latest
     restart: unless-stopped
     environment:
       - TZ=Europe/Madrid
+      - SECRET_ENCRYPTION_KEY=9fb0446198ef137e6dcb75568f0c9f7266fdd52b9d7a07875767e55beb29d77c
     volumes:
-      - ./homarr/configs:/app/data/configs
-      - ./homarr/icons:/app/public/icons
-      - ./homarr/data:/data
+      - ./homarr/appdata:/appdata
       - /var/run/docker.sock:/var/run/docker.sock # For controlling Docker within Homarr
     # ports:
     #   - '7575:7575'
