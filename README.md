@@ -33,3 +33,10 @@ More info about this repo in the [wiki](https://github.com/Pelochus/pelochus-hom
   - 10.0.2.0/24 for node 2 and its Docker containers 
   - ...
 - Think of backups automation (Rsync + Bash or Ansible)
+- Some CI/CD and GitOps (i.e.: auto deploy webserver on git push)
+- Use cloud-init for clusters
+- Use k3s
+- Reduce Ansible usage for things updating Dockers
+- Rename repo to just "homelab" (so that pelochus/homelab on URL)
+- Proxmox as base OS, then put Ubuntu Server/Debian on top (or similar)
+- Add more services like Uptime Kuma
