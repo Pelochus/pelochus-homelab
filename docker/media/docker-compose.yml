@@ -1,7 +1,7 @@
 ---
 # This Docker compose file includes:
 #   qBittorrent-nox (no GUI, but with webUI)
-#   *Arr (Sonarr, Radarr, Readarr, Prowlarr)
+#   *Arr (Sonarr, Radarr, Prowlarr)
 #   Jellyfin
 #   Jellyseer
 
@@ -101,27 +101,6 @@ services:
     networks:
       homelab:
         ipv4_address: 10.0.1.20
-
-  readarr:
-    container_name: readarr
-    image: ghcr.io/hotio/readarr
-    # ports:
-    #   - "8787:8787"
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - UMASK=002
-      - TZ=Etc/UTC
-    volumes:
-      - ./readarr/config:/config
-      - ./readarr/data:/data
-      - /media:/media
-    restart: 'unless-stopped'
-    depends_on:
-      - qbittorrent-nox
-    networks:
-      homelab:
-        ipv4_address: 10.0.1.21
 
   ####################################################
   # End of Arr configuration
