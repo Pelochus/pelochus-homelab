@@ -1,14 +1,27 @@
 ---
-# Include here: PiHole?
 
 services:
+  adguardhome:
+    image: adguard/adguardhome
+    container_name: adguard
+    restart: unless-stopped
+    # network_mode: host
+    ports:
+      - 53:53/tcp # plain dns over tcp
+      - 53:53/udp # plain dns over udp
+      - 88:80/tcp # http web interface
+      - 3000:3000/tcp # initial setup web interface
+    volumes:
+      - ./adguard/config:/opt/adguardhome/conf # app configuration
+      - ./adguard/work:/opt/adguardhome/work # app working directory
+
   wg-easy:
     environment:
       # Change Language:
       # (Supports: en, ua, ru, tr, no, pl, fr, de, ca, es, ko, vi, nl, is, pt, chs, cht, it, th, hi)
       - LANG=en
       # REQUIRED: Change this to your host's public address
-      - WG_HOST=serverbollo.ddns.net
+      - WG_HOST=pelochus.duckdns.org
 
       # Optional:
       # - PASSWORD=foobar123
@@ -29,6 +42,7 @@ services:
     container_name: wg-easy
     volumes:
       - ./wireguard:/etc/wireguard
+      - /lib/modules:/lib/modules:ro
     ports:
       - "51820:51820/udp"
       # - "51821:51821/tcp" # WebUI port
@@ -49,7 +63,7 @@ services:
     restart: unless-stopped
     ports:
       - '80:80'
-      # - '81:81' # WebUI port
+      - '81:81' # WebUI port
       - '443:443'
     volumes:
       - ./nginx/data:/data
